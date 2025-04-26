@@ -11,7 +11,7 @@ const CategorySchema = Schema({
 })
 
 CategorySchema.methods.toJSON = function() {
-    const {__v,password,_id,...category} = this.toObject()
+    const {__v,_id,...category} = this.toObject()
     category.uid = _id
     return category
 }

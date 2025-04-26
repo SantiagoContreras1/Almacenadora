@@ -9,8 +9,12 @@ import authRoutes from "../src/auth/auth.routes.js"
 import categoriesRoutes from "../src/categories/categories.routes.js"
 
 import User from "../src/users/user.model.js"
+import Category from "../src/categories/category.model.js"
+import Role from "../src/role/role.model.js"
 
 let flag = true
+let flagCategory = true
+let flagRole = true
 
 const middlewares = (app)=>{
     app.use(express.urlencoded({extended: false})) //Para los forms
@@ -23,7 +27,7 @@ const middlewares = (app)=>{
 const routes = (app) => {
     app.use("/almacenadora/auth/", authRoutes)
     
-    app.use("/almacenadora/categories/post/", categoriesRoutes)
+    app.use("/almacenadora/categories/", categoriesRoutes)
 }
 
 const conectarDb = async () => {
@@ -62,6 +66,52 @@ export const crearAdmin = async () => {
     }
 }
 
+// Categoria por defecto
+export const crearCate = async () => {
+    const existeCate = await Category.findOne({ name: "Productos Sin Categoria" })
+
+    if (!existeCate) {
+        const defaultCategory = await Category.create({
+            name: "Productos Sin Categoria",
+            description: "Categoria por defecto para los productos sin categoria"
+        })
+
+        await defaultCategory.save()
+        console.log("Categoria por defecto creada")
+        flagCategory = false
+        
+    }else{
+        console.log("Categoria por defecto ya existe")
+    }
+}
+
+// Crear rol por defecto
+export const crearRol = async () => {
+    const existeRolAdmin = await Role.findOne({ name: "ADMIN_ROLE" })
+    const existeRolUser = await Role.findOne({ name: "USER_ROLE" })
+
+    if (!existeRolAdmin && !existeRolUser) {
+        
+        const defaultRoleAdmin = await Role.create({
+            role: "ADMIN_ROLE",
+            description: "Rol por defecto para los administradores"
+        })
+        const defaultRoleUser =await Role.create({
+            role: "USER_ROLE",
+            description: "Rol por defecto para los usuarios"
+        })
+
+
+        await defaultRoleAdmin.save()
+        await defaultRoleUser.save()
+        console.log("Roles creados")
+        flagRole = false
+        
+    }else{
+        console.log("Rol por defecto ya existe")
+    }
+}
+
 export const initServer = ()=>{
     const app = express() // crea el server
     const port= process.env.PORT || 3007
@@ -75,6 +125,14 @@ export const initServer = ()=>{
 
         if (flag) {
             crearAdmin()
+        }
+
+        if (flagCategory) {
+            crearCate()
+        }
+
+        if (flagRole) {
+            crearRol()
         }
     } catch (error) {
         console.log(`Server init failed ${error}`)

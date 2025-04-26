@@ -6,19 +6,6 @@ export const saveProduct = async (req, res) => {
         const data = req.body
         const category = await Category.findById(data.category)
 
-        if (!req.user || req.user.role !== 'admin') {
-            return res.status(403).json({
-                ss: false,
-                message: "Vos sos un user, no podés publicar categorías nuevas."
-            })
-        }
-
-        if (!category) {
-            return res.status(404).json({
-                message: "Category not found"
-            })
-        }
-
         const product = await Product.create({
             name: data.name,
             description: data.description,

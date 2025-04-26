@@ -6,13 +6,6 @@ export const saveCategory = async (req,res) => {
         const {name,description} = req.body
         const category = new Category({name,description})
 
-        if (!req.user || req.user.role !== 'admin') {
-            return res.status(403).json({
-                ss:false,
-                message: "Vos sos un user, no podes publicar categorias nuevas."
-            })
-        }
-
         await category.save()
 
         res.status(200).json({
@@ -57,21 +50,6 @@ export const updateCategory = async (req,res) => {
         const {id} = req.params
         const {...data} = req.body
 
-        const category = await Category.findById(id)
-        if (!category) {
-            return res.status(404).json({
-                message: "Category not found"
-            })
-        }
-
-        //Ver que el editor sea un admin
-        if(req.user.role !== 'admin'){
-            return res.status(403).json({
-                ss:false,
-                message: "No tienes permisos para editar categorias, payaso."
-            })
-        }
-
         const updatedCategory = await Category.findByIdAndUpdate(id,data,{new:true})
 
         res.status(200).json({
@@ -89,37 +67,10 @@ export const updateCategory = async (req,res) => {
 export const deleteCategory = async (req,res) => {
     try {
         const {id} = req.params
-        const {confirm} = req.body
-        const category = await Category.findById(id)
 
-        if (!category) {
-            return res.status(404).json({
-                ss:false,
-                message: "Category not found"
-            })
-        }
-
-        if(req.user.role !== 'admin'){
-            return res.status(403).json({
-                ss:false,
-                message: "No tienes permisos para eliminar categorias, payaso."
-            })
-        }
-
-        // Pedir la confirmacion
-        if (!confirm) {
-            return res.status(400).json({
-                message: `Admin, ¿En serio queres borrar la categoria? Envía un valor 'true' para confirmar`
-            })
-        }
 
         // Buscar la categoria por defecto
         const defaultCategory = await Category.findOne({name:'Productos Sin Categoria'})
-        if (!defaultCategory) {
-            return res.status(404).json({
-                message: "No hay categoria por defecto para asignarle los pobrecitos productos"
-            })
-        }
 
         // Buscar los productos de la categoría eliminada
         const productosHuerfanos = await Product.find({category: id})
