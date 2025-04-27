@@ -9,6 +9,7 @@ import authRoutes from "../src/auth/auth.routes.js"
 import categoriesRoutes from "../src/categories/categories.routes.js"
 import proveedoresRoutes from "../src/proveedores/proveedores.routes.js"
 import productsRoutes from "../src/products/products.routes.js"
+import usersRoutes from "../src/users/user.routes.js"
 
 import User from "../src/users/user.model.js"
 import Category from "../src/categories/category.model.js"
@@ -31,6 +32,7 @@ const routes = (app) => {
     app.use("/almacenadora/categories/", categoriesRoutes)
     app.use("/almacenadora/proveedores/", proveedoresRoutes)
     app.use("/almacenadora/products/", productsRoutes)
+    app.use("/almacenadora/users/", usersRoutes)
 }
 
 const conectarDb = async () => {
@@ -117,7 +119,7 @@ export const crearRol = async () => {
 
 export const initServer = ()=>{
     const app = express() // crea el server
-    const port= process.env.PORT || 3007
+    const port= process.env.PORT || 3000
 
     try {
         middlewares(app)
