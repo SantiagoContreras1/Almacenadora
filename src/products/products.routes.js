@@ -36,7 +36,6 @@ router.post(
 
 router.put(
   "/update/:id",
-  esAdmin,
   [
     validarJWT,
     esAdmin,

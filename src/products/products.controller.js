@@ -1,10 +1,12 @@
 import Product from "./product.model.js";
 import Category from "../categories/category.model.js";
+import Proveedor from "../proveedores/proveedor.model.js";
 
 export const saveProduct = async (req, res) => {
     try {
         const data = req.body
         const category = await Category.findById(data.category)
+        const proveedor = await Proveedor.findById(data.proveedor)
 
         const product = await Product.create({
             name: data.name,
@@ -12,19 +14,29 @@ export const saveProduct = async (req, res) => {
             price: data.price,
             stock: data.stock,
             category: category._id,
-            proveedor: data.proveedor,
+            proveedor: proveedor._id,
             ventas: data.ventas || 0,
             entrada: data.entrada || Date.now(),
             salida: data.salida || null
         })
 
-        category.products.push(product._id)
-        await category.save()
+        proveedor.productos.push(product._id)
+        await proveedor.save()
+
+        const productConCategoria = await Product.findById(product._id)
+            .populate({
+                path: "category",
+                select: "name"
+            })
+            .populate({
+                path: "proveedor",
+                select: "nombre"
+            })
 
         res.status(200).json({
             ss: true,
             msg: 'Ahí está tu producto mirá…',
-            product
+            productConCategoria
         })
 
     } catch (error) {
@@ -37,22 +49,22 @@ export const saveProduct = async (req, res) => {
 
 
 export const getProducts = async (req,res) => {
-    const {bestSeller} = req.query
     try {
         const query = { estado: true }
 
-        if (bestSeller) {
-            query.ventas = { $gte: Number(bestSeller) } // Filtrar por ventas mayores o iguales
-        }
+        const products = await Product.find(query)
+            .populate({
+                path: "category",
+                select: "name"
+            })
+            .populate({
+                path: "proveedor",
+                select: "nombre"
+            })
 
-        const [total, products] = await Promise.all([
-            Product.countDocuments(query),
-            Product.find(query).sort({ ventas: bestSeller ? 1 : -1 }) // Si hay filtro, ordena de mayor a menor
-        ]);
 
         res.status(200).json({
             ss:true,
-            total,
             products
         })
     } catch (error) {
@@ -94,13 +106,6 @@ export const updateProduct = async (req, res) => {
         const { ...data } = req.body
         const category = await Category.findById(data.category)
 
-        if (!req.user || req.user.role !== 'admin') {
-            return res.status(403).json({
-                ss: false,
-                message: "Vos sos un user, no podés publicar categorías nuevas."
-            })
-        }
-
         if (!category) {
             return res.status(404).json({
                 message: "Category not found"
@@ -140,15 +145,7 @@ export const updateProduct = async (req, res) => {
 export const deleteProduct = async (req,res) => {
     try {
         const {id} = req.params
-        const {confirm} = req.body
         const product = await Product.findById(id)
-
-        if (!req.user || req.user.role !== 'admin') {
-            return res.status(403).json({
-                ss:false,
-                message: "Vos sos un user, no podes publicar categorias nuevas."
-            })
-        }
 
         if (!product) {
             return res.status(404).json({
@@ -156,12 +153,12 @@ export const deleteProduct = async (req,res) => {
             })
         }
 
-        // Pedir la confirmacion
-        if (!confirm) {
-            return res.status(400).json({
-                message: `Admin, ¿En serio queres borrar la categoria? Envía un valor 'true' para confirmar`
-            })
+        const proveedor = await Proveedor.findOne(product.proveedor)
+        if(proveedor){
+            proveedor.productos.pull(product._id)
+            await proveedor.save()
         }
+
 
         const deletedProduct = await Product.findByIdAndUpdate(id,{estado:false},{new:true})
 

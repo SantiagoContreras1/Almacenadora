@@ -3,7 +3,7 @@ import mongoose, {Schema,model} from "mongoose"
 const CategorySchema = Schema({
     name: {type:String,required:true},
     description: {type:String,required:true},
-    products:[{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }],
+    proveedores:[{ type: mongoose.Schema.Types.ObjectId, ref: 'Proveedor' }],
     estado:{
         type:Boolean,
         default:true

@@ -7,6 +7,8 @@ import { dbConnection } from "./mongo.js";
 
 import authRoutes from "../src/auth/auth.routes.js"
 import categoriesRoutes from "../src/categories/categories.routes.js"
+import proveedoresRoutes from "../src/proveedores/proveedores.routes.js"
+import productsRoutes from "../src/products/products.routes.js"
 
 import User from "../src/users/user.model.js"
 import Category from "../src/categories/category.model.js"
@@ -26,8 +28,9 @@ const middlewares = (app)=>{
 
 const routes = (app) => {
     app.use("/almacenadora/auth/", authRoutes)
-    
     app.use("/almacenadora/categories/", categoriesRoutes)
+    app.use("/almacenadora/proveedores/", proveedoresRoutes)
+    app.use("/almacenadora/products/", productsRoutes)
 }
 
 const conectarDb = async () => {
