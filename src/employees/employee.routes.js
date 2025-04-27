@@ -3,7 +3,7 @@ import {check} from "express-validator";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validarJWT } from "../middlewares/validar-JWT.js";
 import { esAdmin } from "../middlewares/products/validar-admin.js";
-import { saveEmployee,getEmployees,updateEmployee,deleteEmployee } from "./employee.controller.js";
+import { saveEmployee,getEmployees,updateEmployee,deleteEmployee, getEmployeeId } from "./employee.controller.js";
 
 const router = Router()
 
@@ -23,6 +23,11 @@ router.post(
 router.get(
     "/get/",
     getEmployees
+)
+
+router.get(
+    "/get/:id",
+    getEmployeeId
 )
 
 router.put(

@@ -8,6 +8,8 @@ import { dbConnection } from "./mongo.js";
 import authRoutes from "../src/auth/auth.routes.js"
 import categoriesRoutes from "../src/categories/categories.routes.js"
 import employeeRoutes from "../src/employees/employee.routes.js"
+import inputsRoutes from "../src/inputs/input.routes.js"
+import proveedoresRoutes from "../src/proveedores/proveedores.routes.js"
 
 import User from "../src/users/user.model.js"
 import Category from "../src/categories/category.model.js"
@@ -30,6 +32,8 @@ const routes = (app) => {
     app.use("/almacenadora/auth/", authRoutes)
     app.use("/almacenadora/categories/", categoriesRoutes)
     app.use("/almacenadora/employees/", employeeRoutes)
+    app.use("/almacenadora/inputs/", inputsRoutes)
+    app.use("/almacenadora/proveedores/", proveedoresRoutes)
 }
 
 const conectarDb = async () => {
