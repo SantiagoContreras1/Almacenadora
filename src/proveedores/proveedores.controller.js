@@ -4,7 +4,6 @@ import Category from '../categories/category.model.js';
 export const saveProveedor = async (req,res) => {
     try {
         const data = req.body
-        console.log("ID de categoría recibido:", data.categoria);
         const category = await Category.findById(data.categoria)
         if (!category) {
             return res.status(404).json({

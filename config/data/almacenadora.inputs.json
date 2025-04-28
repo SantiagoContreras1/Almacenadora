@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "680e7d4d65d9d2294a97d402"
+  },
+  "product": {
+    "$oid": "680da23b85b80d8c2849431c"
+  },
+  "quantityAdded": 10,
+  "employee": {
+    "$oid": "680d55d0d79213327072eaf5"
+  },
+  "date": {
+    "$date": "2025-04-27T18:54:05.171Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "680e820c6e6ad4bbffe6c4d6"
+  },
+  "product": {
+    "$oid": "680da23b85b80d8c2849431c"
+  },
+  "quantityAdded": 20,
+  "employee": {
+    "$oid": "680d55d0d79213327072eaf5"
+  },
+  "date": {
+    "$date": "2025-04-27T19:14:20.679Z"
+  },
+  "__v": 0
+}]

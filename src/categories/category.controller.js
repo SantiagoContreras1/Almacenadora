@@ -28,10 +28,10 @@ export const getCategories = async (req,res) => {
         const query = {estado:true}
 
         const categories = await Category.find(query)
-            .populate({
-                path: 'products', // Esto trae todos los productos asociados
-                select: 'name description price stock ventas estado' // Selecciona los campos que va a traer
-            });
+           .populate({
+               path: "proveedores",
+               select: "nombre"
+           })
 
         res.status(200).json({
             categories
