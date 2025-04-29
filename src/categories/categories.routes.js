@@ -10,7 +10,7 @@ import {saveCategory,getCategories,updateCategory,deleteCategory} from "./catego
 
 const router = Router()
 
-router.get("/get/",getCategories)
+router.get("/",getCategories)
 
 router.post(
     "/save/",
