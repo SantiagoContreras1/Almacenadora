@@ -2,6 +2,12 @@ import Product from "./product.model.js";
 import Category from "../categories/category.model.js";
 import Proveedor from "../proveedores/proveedor.model.js";
 
+import {
+    findProductByCategory,
+    findProductsByDate,
+    findByNameProduct
+} from '../helpers/filtrar-products..js';
+
 export const saveProduct = async (req, res) => {
     try {
         const data = req.body
@@ -11,6 +17,7 @@ export const saveProduct = async (req, res) => {
         const product = await Product.create({
             name: data.name,
             description: data.description,
+            picture: data.picture || "",
             price: data.price,
             stock: data.stock,
             category: category._id,
@@ -51,6 +58,20 @@ export const saveProduct = async (req, res) => {
 export const getProducts = async (req,res) => {
     try {
         const query = { estado: true }
+        const { name,category,entrada} = req.query
+
+        if(name){
+            query.name = findByNameProduct(name)
+        }
+
+        if(category){
+            query.category = await findProductByCategory(category)
+        }
+
+        if(entrada){
+            query.entrada = findProductsByDate(entrada)
+        }
+
 
         const products = await Product.find(query)
             .populate({
@@ -61,6 +82,13 @@ export const getProducts = async (req,res) => {
                 path: "proveedor",
                 select: "nombre"
             })
+
+        if(products.length === 0){
+            return res.status(404).json({
+                ss:false,
+                msg: 'No se encontraron productos'
+            })
+        }
 
 
         res.status(200).json({
