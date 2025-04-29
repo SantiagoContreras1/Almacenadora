@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "eda7615b-9246-4617-af48-89cfc7c8d5ec",
+		"_postman_id": "2d73dc4c-0dd7-4629-ba8a-0193393800b9",
 		"name": "auth",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "42040033"
@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Yandel\",\r\n  \"email\": \"yandel@gmail.com\",\r\n  \"password\": \"1234567\",\r\n  \"role\":\"USER_ROLE\"\r\n}\r\n",
+					"raw": "{\r\n    \"name\":\"Mayen\",\r\n    \"email\":\"mayen@gmail.com\",\r\n    \"password\":\"1234567\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,16 +21,17 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3003/publicationsSystem/auth/register",
+					"raw": "http://localhost:3007/almacenadora/auth/register/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3003",
+					"port": "3007",
 					"path": [
-						"publicationsSystem",
+						"almacenadora",
 						"auth",
-						"register"
+						"register",
+						""
 					]
 				}
 			},
@@ -43,7 +44,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"email\": \"yandel@gmail.com\",\r\n  \"password\": \"1234567\"\r\n}",
+					"raw": "{\r\n    \"email\":\"mayen@gmail.com\",\r\n    \"password\":\"1234567\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -51,16 +52,17 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3003/publicationsSystem/auth/login",
+					"raw": "http://localhost:3007/almacenadora/auth/login/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3003",
+					"port": "3007",
 					"path": [
-						"publicationsSystem",
+						"almacenadora",
 						"auth",
-						"login"
+						"login",
+						""
 					]
 				}
 			},

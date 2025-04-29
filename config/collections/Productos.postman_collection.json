@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "9706f3dd-62d3-421d-804a-a20e0bebf1aa",
+		"name": "Productos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42040033"
+	},
+	"item": [
+		{
+			"name": "Agregar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwNGRmODZiNzFmNWQ4MGZkNWU4OWYiLCJpYXQiOjE3NDU4OTkwMDksImV4cCI6MTc0NTkxNzAwOX0.GQ3E5t_c8P9YAa9DjHYorrl46kvj_Dgxl02aidYmio8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Hilo dental\",\r\n  \"description\": \"Hilo para los dientes\",\r\n  \"price\": 35.00,\r\n  \"stock\": 50,\r\n  \"category\": \"68104f1a6b71f5d80fd5e8b4\",\r\n  \"proveedor\": \"68104f8d6b71f5d80fd5e8be\",\r\n  \"ventas\": 1,\r\n  \"entrada\": \"2025-04-25\",\r\n  \"salida\": \"2025-05-25\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3007/almacenadora/products/save/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"almacenadora",
+						"products",
+						"save",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3007/almacenadora/products/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"almacenadora",
+						"products",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Pas",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "Ropa de hombre",
+							"disabled": true
+						},
+						{
+							"key": "entrada",
+							"value": "2025-04-25",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkMjdjZTA1ZDkxYmY0MWUyMTdlOWUiLCJpYXQiOjE3NDU3Mjg5ODEsImV4cCI6MTc0NTc0Njk4MX0.790PtmE6zSdM1NyU6xPmKCkxiq7olv3r-oQ7lkqn8hc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3007/almacenadora/products/search/680de4b9262d02805f978438",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"almacenadora",
+						"products",
+						"search",
+						"680de4b9262d02805f978438"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwNGRmODZiNzFmNWQ4MGZkNWU4OWYiLCJpYXQiOjE3NDU4OTkwMDksImV4cCI6MTc0NTkxNzAwOX0.GQ3E5t_c8P9YAa9DjHYorrl46kvj_Dgxl02aidYmio8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Pasta dental BANANEAR\",\r\n  \"description\": \"Pasta para los dientes\",\r\n  \"price\": 35.00,\r\n  \"stock\": 550,\r\n  \"category\": \"68104f1a6b71f5d80fd5e8b4\",\r\n  \"proveedor\": \"68104f8d6b71f5d80fd5e8be\",\r\n  \"ventas\": 1,\r\n  \"entrada\": \"2025-04-25\",\r\n  \"salida\": \"2025-05-25\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3007/almacenadora/products/update/681050076b71f5d80fd5e8cd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"almacenadora",
+						"products",
+						"update",
+						"681050076b71f5d80fd5e8cd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwNGRmODZiNzFmNWQ4MGZkNWU4OWYiLCJpYXQiOjE3NDU4OTkwMDksImV4cCI6MTc0NTkxNzAwOX0.GQ3E5t_c8P9YAa9DjHYorrl46kvj_Dgxl02aidYmio8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"confirm\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3007/almacenadora/products/delete/6810501c6b71f5d80fd5e8db",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"almacenadora",
+						"products",
+						"delete",
+						"6810501c6b71f5d80fd5e8db"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product Stock",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwNGRmODZiNzFmNWQ4MGZkNWU4OWYiLCJpYXQiOjE3NDU4OTkwMDksImV4cCI6MTc0NTkxNzAwOX0.GQ3E5t_c8P9YAa9DjHYorrl46kvj_Dgxl02aidYmio8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3007/almacenadora/products/stock/681066c72e13d3ddaabacc53",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"almacenadora",
+						"products",
+						"stock",
+						"681066c72e13d3ddaabacc53"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Total Stock and Value",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwNGRmODZiNzFmNWQ4MGZkNWU4OWYiLCJpYXQiOjE3NDU4OTkwMDksImV4cCI6MTc0NTkxNzAwOX0.GQ3E5t_c8P9YAa9DjHYorrl46kvj_Dgxl02aidYmio8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3007/almacenadora/products/totalStock/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"almacenadora",
+						"products",
+						"totalStock",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
