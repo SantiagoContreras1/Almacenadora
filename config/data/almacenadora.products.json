@@ -1,0 +1,75 @@
+[{
+  "_id": {
+    "$oid": "681050076b71f5d80fd5e8cd"
+  },
+  "name": "Pasta dental BANANEAR",
+  "description": "Pasta para los dientes",
+  "picture": "",
+  "price": 35,
+  "stock": 550,
+  "proveedor": {
+    "$oid": "68104f8d6b71f5d80fd5e8be"
+  },
+  "category": {
+    "$oid": "68104f1a6b71f5d80fd5e8b4"
+  },
+  "ventas": 1,
+  "entrada": {
+    "$date": "2025-04-25T00:00:00.000Z"
+  },
+  "salida": {
+    "$date": "2025-05-25T00:00:00.000Z"
+  },
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6810501c6b71f5d80fd5e8db"
+  },
+  "name": "Pasta dental BANANEAR",
+  "description": "Pasta para los dientes",
+  "picture": "",
+  "price": 35,
+  "stock": 50,
+  "proveedor": {
+    "$oid": "68104f8d6b71f5d80fd5e8be"
+  },
+  "category": {
+    "$oid": "68104f1a6b71f5d80fd5e8b4"
+  },
+  "ventas": 1,
+  "entrada": {
+    "$date": "2025-04-25T00:00:00.000Z"
+  },
+  "salida": {
+    "$date": "2025-05-25T00:00:00.000Z"
+  },
+  "estado": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681066c72e13d3ddaabacc53"
+  },
+  "name": "Hilo dental",
+  "description": "Hilo para los dientes",
+  "picture": "",
+  "price": 35,
+  "stock": 50,
+  "proveedor": {
+    "$oid": "68104f8d6b71f5d80fd5e8be"
+  },
+  "category": {
+    "$oid": "68104f1a6b71f5d80fd5e8b4"
+  },
+  "ventas": 1,
+  "entrada": {
+    "$date": "2025-04-25T00:00:00.000Z"
+  },
+  "salida": {
+    "$date": "2025-05-25T00:00:00.000Z"
+  },
+  "estado": true,
+  "__v": 0
+}]
