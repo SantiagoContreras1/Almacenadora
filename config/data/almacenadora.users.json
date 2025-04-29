@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "68104df86b71f5d80fd5e89f"
+  },
+  "name": "Admin",
+  "email": "admin@admin.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$ZUzz1m+RhFZ2xW0Ksp0JIA$/IqyDg+FvhZB5EFO8SZ4wvZeuASfwyYp/S73/ndiadg",
+  "role": "ADMIN_ROLE",
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68104e7b6b71f5d80fd5e8ab"
+  },
+  "name": "Mayen",
+  "email": "mayen@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$2lcH2hCH2uMte4TL04Kf3A$fTTJFpsVPLk8QznqULwgo/dehLJaB1ZjCYiDdEbKrUQ",
+  "role": "USER_ROLE",
+  "estado": true,
+  "__v": 0
+}]

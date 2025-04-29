@@ -2,6 +2,12 @@ import Product from "./product.model.js";
 import Category from "../categories/category.model.js";
 import Proveedor from "../proveedores/proveedor.model.js";
 
+import {
+    findProductByCategory,
+    findProductsByDate,
+    findByNameProduct
+} from '../helpers/filtrar-products..js';
+
 export const saveProduct = async (req, res) => {
   try {
     const data = req.body;
@@ -165,3 +171,61 @@ export const deleteProduct = async (req, res) => {
     });
   }
 };
+
+
+
+// GETS ESPECIALES
+export const getProductStock = async (req,res) => {
+    try {
+        const { id } = req.params
+        const product = await Product.findById(id)
+
+        if (!product) {
+            return res.status(404).json({
+                ss:false,
+                msg: 'No se encontró el producto'
+            })
+        }
+
+        const stock = product.stock
+
+        res.status(200).json({
+            ss:true,
+            stock: `El stock del producto ${product.name} es: ${stock}`
+        })
+
+
+    } catch (error) {
+        return res.status(500).json({
+            msg: "Error al obtener el stock del producto",
+            error: error.message
+        })
+    }
+}
+
+export const getTotalStock = async (req,res) => {
+    try {
+        const products = await Product.find({ estado: true })
+        let totalStock = 0
+        let totalValue = 0
+
+        for (const product of products) {
+            totalStock += product.stock
+            totalValue += product.price * product.stock
+        }
+
+        res.status(200).json({
+            ss:true,
+            totalStock: `El stock total es: ${totalStock}`,
+            totalValue: `El valor total del stock es: Q${totalValue}`
+        })
+
+        
+    } catch (error) {
+        return res.status(500).json({
+            msg: "Error al obtener el stock total", 
+            error: error.message
+        })
+    }
+}
+

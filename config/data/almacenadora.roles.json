@@ -1,0 +1,224 @@
+[{
+  "_id": {
+    "$oid": "68104de53101b3297bae6ac6"
+  },
+  "role": "ADMIN_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68104de53101b3297bae6acb"
+  },
+  "role": "USER_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68104df86b71f5d80fd5e898"
+  },
+  "role": "ADMIN_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68104df86b71f5d80fd5e89a"
+  },
+  "role": "USER_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681058352116a987ac5243a5"
+  },
+  "role": "ADMIN_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681058352116a987ac5243a7"
+  },
+  "role": "USER_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68105db33f1ef8262c7b4a1a"
+  },
+  "role": "ADMIN_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68105db33f1ef8262c7b4a1c"
+  },
+  "role": "USER_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68105e196445a86504a5cf5e"
+  },
+  "role": "ADMIN_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68105e196445a86504a5cf61"
+  },
+  "role": "USER_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68105e621ec9ee8908db6315"
+  },
+  "role": "ADMIN_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68105e621ec9ee8908db6317"
+  },
+  "role": "USER_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68105e71d6f5a1e230b25048"
+  },
+  "role": "ADMIN_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68105e71d6f5a1e230b2504a"
+  },
+  "role": "USER_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68105ebbe1b3d180e9916a8f"
+  },
+  "role": "ADMIN_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68105ebbe1b3d180e9916a91"
+  },
+  "role": "USER_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681066a22e13d3ddaabacc49"
+  },
+  "role": "ADMIN_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681066a22e13d3ddaabacc4c"
+  },
+  "role": "USER_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68106708f94548033f28534e"
+  },
+  "role": "ADMIN_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68106708f94548033f285350"
+  },
+  "role": "USER_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68106c9e1fe4df68db673393"
+  },
+  "role": "ADMIN_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68106c9e1fe4df68db673395"
+  },
+  "role": "USER_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68106d9c50d25114cd476a5d"
+  },
+  "role": "ADMIN_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68106d9c50d25114cd476a5f"
+  },
+  "role": "USER_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68106da768b5eb14ae412910"
+  },
+  "role": "ADMIN_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68106da768b5eb14ae412912"
+  },
+  "role": "USER_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68106db02d74e086b97b6ef8"
+  },
+  "role": "ADMIN_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68106db02d74e086b97b6efa"
+  },
+  "role": "USER_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68106db711a31480375f3969"
+  },
+  "role": "ADMIN_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68106db711a31480375f396b"
+  },
+  "role": "USER_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68106dbdec3f5e643745c521"
+  },
+  "role": "ADMIN_ROLE",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68106dbdec3f5e643745c523"
+  },
+  "role": "USER_ROLE",
+  "__v": 0
+}]
