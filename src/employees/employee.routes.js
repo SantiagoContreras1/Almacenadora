@@ -1,16 +1,11 @@
 import { Router } from "express";
-import { check } from "express-validator";
-
+import {check} from "express-validator";
 import { validarCampos } from "../middlewares/validar-campos.js";
-import { validarJWT } from "../middlewares/validar-JWT.js"
+import { validarJWT } from "../middlewares/validar-JWT.js";
 import { esAdmin } from "../middlewares/products/validar-admin.js";
-import { categoryExists, categoryExistsForDelete } from "../middlewares/products/validar-categoria.js";
-
-import {saveCategory,getCategories,updateCategory,deleteCategory} from "./category.controller.js"
+import { saveEmployee,getEmployees,updateEmployee,deleteEmployee, getEmployeeId } from "./employee.controller.js";
 
 const router = Router()
-
-router.get("/get/",getCategories)
 
 router.post(
     "/save/",
@@ -18,11 +13,21 @@ router.post(
         validarJWT,
         esAdmin,
         check("name", "El nombre es obligatorio").not().isEmpty(),
-        check("description", "La descripción es obligatorio").not().isEmpty(),
-        categoryExists,
+        check("apellido", "El apellido es obligatorio").not().isEmpty(),
+        check("puesto", "El puesto es obligatorio").not().isEmpty(),
         validarCampos
     ],
-    saveCategory
+    saveEmployee
+)
+
+router.get(
+    "/get/",
+    getEmployees
+)
+
+router.get(
+    "/get/:id",
+    getEmployeeId
 )
 
 router.put(
@@ -30,13 +35,13 @@ router.put(
     [
         validarJWT,
         esAdmin,
-        check("id", "El nombre es obligatorio").isMongoId(),
+        check("id", "El ID es obligatorio").isMongoId(),
         check("name", "El nombre es obligatorio").not().isEmpty(),
-        check("description", "La descripción es obligatorio").not().isEmpty(),
-        categoryExists,
+        check("apellido", "El apellido es obligatorio").not().isEmpty(),
+        check("puesto", "El puesto es obligatorio").not().isEmpty(),
         validarCampos
     ],
-    updateCategory
+    updateEmployee
 )
 
 router.delete(
@@ -45,11 +50,10 @@ router.delete(
         validarJWT,
         esAdmin,
         check("id", "El ID es obligatorio").isMongoId(),
-        categoryExistsForDelete,
         check("confirm", "El valor de confirm es obligatorio").isBoolean(),
         validarCampos
     ],
-    deleteCategory
+    deleteEmployee
 )
 
 export default router

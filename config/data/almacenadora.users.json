@@ -1,22 +1,11 @@
 [{
   "_id": {
-    "$oid": "68104df86b71f5d80fd5e89f"
+    "$oid": "6810852f06dbee64b90fd342"
   },
   "name": "Admin",
   "email": "admin@admin.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$ZUzz1m+RhFZ2xW0Ksp0JIA$/IqyDg+FvhZB5EFO8SZ4wvZeuASfwyYp/S73/ndiadg",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$O88/o8EOJnyNA7qjtNrZvw$bR4x+8zC5UNSBcSzB2OSVkSS6ZRfvsnGXfhU+ziJiGU",
   "role": "ADMIN_ROLE",
-  "estado": true,
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "68104e7b6b71f5d80fd5e8ab"
-  },
-  "name": "Mayen",
-  "email": "mayen@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$2lcH2hCH2uMte4TL04Kf3A$fTTJFpsVPLk8QznqULwgo/dehLJaB1ZjCYiDdEbKrUQ",
-  "role": "USER_ROLE",
   "estado": true,
   "__v": 0
 }]

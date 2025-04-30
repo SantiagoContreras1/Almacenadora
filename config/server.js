@@ -12,6 +12,11 @@ import categoriesRoutes from "../src/categories/categories.routes.js"
 import proveedoresRoutes from "../src/proveedores/proveedores.routes.js"
 import productsRoutes from "../src/products/products.routes.js"
 import usersRoutes from "../src/users/user.routes.js"
+import inputRoutes from "../src/inputControl/input.routes.js"
+import outputRoutes from "../src/outputControl/output.routes.js"
+import employeesRoutes from "../src/employees/employee.routes.js"
+
+
 
 import User from "../src/users/user.model.js"
 import Category from "../src/categories/category.model.js"
@@ -37,6 +42,9 @@ const routes = (app) => {
     app.use("/almacenadora/proveedores/", proveedoresRoutes)
     app.use("/almacenadora/products/", productsRoutes)
     app.use("/almacenadora/users/", usersRoutes)
+    app.use("/almacenadora/employees/", employeesRoutes)
+    app.use("/almacenadora/input/", inputRoutes)
+    app.use("/almacenadora/output/", outputRoutes)
 }
 
 const conectarDb = async () => {
