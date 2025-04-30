@@ -1,20 +1,20 @@
 [{
   "_id": {
-    "$oid": "680d6eb79cd9a5c922f03969"
+    "$oid": "68108c877e62c8a75d39ebf3"
   },
-  "name": "Josue",
-  "apellido": "yax",
-  "puesto": "vendedor",
-  "__v": 0,
-  "estado": true
+  "name": "Empleado 1",
+  "apellido": "Apellido del empleado 1",
+  "puesto": "Bodeguero",
+  "estado": true,
+  "__v": 0
 },
 {
   "_id": {
-    "$oid": "680d717c9de000b74d2d806b"
+    "$oid": "68108e4a7e62c8a75d39ec0f"
   },
-  "name": "Diego",
-  "apellido": "Lopez",
-  "puesto": "vendedor",
+  "name": "Empleado 2",
+  "apellido": "Apellido 2",
+  "puesto": "Admin de bodegas",
   "estado": true,
   "__v": 0
 }]

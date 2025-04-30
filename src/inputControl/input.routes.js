@@ -4,7 +4,8 @@ import { check } from "express-validator";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validarJWT } from "../middlewares/validar-JWT.js";
 import { validarProductoExiste } from "../middlewares/validar-producto.js";
-import { saveInput, getInputs, deleteInput, updateInput, getinputId } from "./input.controller.js"; 
+import { saveInput, getInputs, deleteInput, updateInput, getinputId, getMovementsInventory, getTopMovedProducts} from "./input.controller.js"; 
+import { get } from "mongoose";
 
 const router = Router();
 
@@ -58,5 +59,22 @@ router.delete(
     deleteInput
 )
 
+router.get(
+    "/movements/:id",
+    [
+        validarJWT,
+        validarCampos,
+        validarProductoExiste,
+    ],
+    getMovementsInventory
+)
+
+router.get(
+    "/moreActive/:id",
+    [
+            
+    ],
+    getTopMovedProducts
+)
 
 export default router;

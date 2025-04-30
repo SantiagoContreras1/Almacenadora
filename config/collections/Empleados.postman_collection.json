@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "fbcff2e1-ab70-400f-96ad-f0515937871c",
+		"name": "Empleados",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37414058"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwODUyZjA2ZGJlZTY0YjkwZmQzNDIiLCJpYXQiOjE3NDU5MTQ3NzIsImV4cCI6MTc0NTkzMjc3Mn0.aU5F4mNy6JgF94E-aHoLaE4A8hF2xp9PA25A-LZvprA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Empleado 2\",\r\n    \"apellido\":\"Apellido 2\",\r\n    \"puesto\":\"Admin de bodegas\",\r\n    \"estado\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/almacenadora/employees/save/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"almacenadora",
+						"employees",
+						"save",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/almacenadora/employees/get/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"almacenadora",
+						"employees",
+						"get",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/almacenadora/employees/update/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"almacenadora",
+						"employees",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/almacenadora/employees/delete/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"almacenadora",
+						"employees",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,32 +1,64 @@
 [{
   "_id": {
-    "$oid": "680e7d4d65d9d2294a97d402"
+    "$oid": "68108cc47e62c8a75d39ebf9"
   },
   "product": {
-    "$oid": "680da23b85b80d8c2849431c"
+    "$oid": "681050076b71f5d80fd5e8cd"
   },
   "quantityAdded": 10,
   "employee": {
-    "$oid": "680d55d0d79213327072eaf5"
+    "$oid": "6810852f06dbee64b90fd342"
   },
   "date": {
-    "$date": "2025-04-27T18:54:05.171Z"
+    "$date": "2025-04-29T08:24:36.328Z"
   },
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "680e820c6e6ad4bbffe6c4d6"
+    "$oid": "68115afff87fe05b956115ce"
   },
   "product": {
-    "$oid": "680da23b85b80d8c2849431c"
+    "$oid": "681050076b71f5d80fd5e8cd"
   },
   "quantityAdded": 20,
   "employee": {
-    "$oid": "680d55d0d79213327072eaf5"
+    "$oid": "6810852f06dbee64b90fd342"
   },
   "date": {
-    "$date": "2025-04-27T19:14:20.679Z"
+    "$date": "2025-04-29T23:04:31.046Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68116e0dfaf649e26f9860f5"
+  },
+  "product": {
+    "$oid": "681066c72e13d3ddaabacc53"
+  },
+  "quantityAdded": 40,
+  "employee": {
+    "$oid": "6810852f06dbee64b90fd342"
+  },
+  "date": {
+    "$date": "2025-04-30T00:25:49.211Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68116f06faf649e26f98610e"
+  },
+  "product": {
+    "$oid": "681066c72e13d3ddaabacc53"
+  },
+  "quantityAdded": 40,
+  "employee": {
+    "$oid": "6810852f06dbee64b90fd342"
+  },
+  "date": {
+    "$date": "2025-04-30T00:29:58.110Z"
   },
   "__v": 0
 }]

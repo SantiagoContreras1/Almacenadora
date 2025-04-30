@@ -2,19 +2,27 @@ import express from "express"
 import cors from "cors"
 import helmet from "helmet";
 import morgan from "morgan";
-import bcrypt from "bcrypt";
+import {hash} from "argon2";
+import { Server as SocketIOServer } from "socket.io";
+import { createServer } from "http";
 import { dbConnection } from "./mongo.js";
 
 import authRoutes from "../src/auth/auth.routes.js"
 import categoriesRoutes from "../src/categories/categories.routes.js"
 import proveedoresRoutes from "../src/proveedores/proveedores.routes.js"
 import productsRoutes from "../src/products/products.routes.js"
-import inputsRoutes from "../src/inputControl/input.routes.js"
+import usersRoutes from "../src/users/user.routes.js"
+import inputRoutes from "../src/inputControl/input.routes.js"
+import outputRoutes from "../src/outputControl/output.routes.js"
 import employeesRoutes from "../src/employees/employee.routes.js"
+
+
 
 import User from "../src/users/user.model.js"
 import Category from "../src/categories/category.model.js"
 import Role from "../src/role/role.model.js"
+
+import { checkStockAndExp } from "../src/alerts/alerts.controller.js";
 
 let flag = true
 let flagCategory = true
@@ -33,8 +41,10 @@ const routes = (app) => {
     app.use("/almacenadora/categories/", categoriesRoutes)
     app.use("/almacenadora/proveedores/", proveedoresRoutes)
     app.use("/almacenadora/products/", productsRoutes)
-    app.use("/almacenadora/inputs/", inputsRoutes)
+    app.use("/almacenadora/users/", usersRoutes)
     app.use("/almacenadora/employees/", employeesRoutes)
+    app.use("/almacenadora/input/", inputRoutes)
+    app.use("/almacenadora/output/", outputRoutes)
 }
 
 const conectarDb = async () => {
@@ -52,8 +62,7 @@ export const crearAdmin = async () => {
         const existeAdmin = await User.findOne({ email: "admin@admin.com"})
 
         if (!existeAdmin) {
-            const salt = await bcrypt.genSalt(10)
-            const hashedPass = await bcrypt.hashSync("1234567", salt)
+            const hashedPass = await hash("1234567")
 
             const adminUser = await User.create({
                 name: 'Admin',
@@ -119,14 +128,42 @@ export const crearRol = async () => {
     }
 }
 
+// Alerta de stock y exp
+setInterval(() => {
+    checkStockAndExp()
+}, 60000); // Cada 1 minuto
+
+
+// CREAR APP Y SERVER
+
+const app = express() // crea el server
+const server = createServer(app)
+const io = new SocketIOServer(server,{
+    cors:{
+        origin: "*",
+        methods: ["GET", "POST"]
+    }
+})
+
 export const initServer = ()=>{
-    const app = express() // crea el server
-    const port= process.env.PORT || 3000
+
+    const port= process.env.PORT || 3007
 
     try {
         middlewares(app)
         conectarDb()
         routes(app)
+
+        io.on("connection", (socket) => {
+            console.log("Nuevo cliente conectado")
+        
+            socket.on("disconnect",() => {
+                console.log("Cliente desconectado")
+            })
+        
+        })
+
+
         app.listen(port)
         console.log(`Server running on port ${port}`)
 
@@ -145,3 +182,5 @@ export const initServer = ()=>{
         console.log(`Server init failed ${error}`)
     }
 }
+
+export {io}

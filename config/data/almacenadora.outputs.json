@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "6810965c568a52067c0088a4"
+  },
+  "product": {
+    "$oid": "681050076b71f5d80fd5e8cd"
+  },
+  "date": {
+    "$date": "2025-04-29T09:05:32.617Z"
+  },
+  "employee": {
+    "$oid": "68108c877e62c8a75d39ebf3"
+  },
+  "quantityRemoved": 60,
+  "reason": "No compro 60 compro 80",
+  "destination": "Fundacion KINAL ZONA 7",
+  "__v": 0
+}]

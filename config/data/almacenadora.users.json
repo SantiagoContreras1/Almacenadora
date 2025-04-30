@@ -1,0 +1,11 @@
+[{
+  "_id": {
+    "$oid": "6810852f06dbee64b90fd342"
+  },
+  "name": "Admin",
+  "email": "admin@admin.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$O88/o8EOJnyNA7qjtNrZvw$bR4x+8zC5UNSBcSzB2OSVkSS6ZRfvsnGXfhU+ziJiGU",
+  "role": "ADMIN_ROLE",
+  "estado": true,
+  "__v": 0
+}]

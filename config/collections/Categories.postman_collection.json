@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "b9f4e76a-9403-4be9-8244-e66edb70a842",
+		"name": "Categories",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37414058"
+	},
+	"item": [
+		{
+			"name": "Guardar Catwegoria",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwNGRmODZiNzFmNWQ4MGZkNWU4OWYiLCJpYXQiOjE3NDU4OTkwMDksImV4cCI6MTc0NTkxNzAwOX0.GQ3E5t_c8P9YAa9DjHYorrl46kvj_Dgxl02aidYmio8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Higiene bucal\",\r\n    \"description\": \"Productos para la higiene bucal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3007/almacenadora/categories/save/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"almacenadora",
+						"categories",
+						"save",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkMjM1ZjM0MmMxNzdiYzBiNjAxMzgiLCJpYXQiOjE3NDU2OTE0OTksImV4cCI6MTc0NTcwOTQ5OX0.GFXP1obrZ2DEttBe-cx6wgXu30RabS3wKyFGpOA0DX8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3007/almacenadora/categories/get/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"almacenadora",
+						"categories",
+						"get",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkMjdjZTA1ZDkxYmY0MWUyMTdlOWUiLCJpYXQiOjE3NDU2OTM0MDAsImV4cCI6MTc0NTcxMTQwMH0.FIyUzIT9jzF8V8KcWY8hHpMwjA0F4cPDqH2VupKvqYM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Eliminar\",\r\n    \"description\": \"Voy a bananear esta categoria\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3007/almacenadora/categories/update/680d2a82e4c8d934165c1664",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"almacenadora",
+						"categories",
+						"update",
+						"680d2a82e4c8d934165c1664"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkMjdjZTA1ZDkxYmY0MWUyMTdlOWUiLCJpYXQiOjE3NDU2OTM0MDAsImV4cCI6MTc0NTcxMTQwMH0.FIyUzIT9jzF8V8KcWY8hHpMwjA0F4cPDqH2VupKvqYM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"confirm\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3007/almacenadora/categories/delete/680d2a82e4c8d934165c1664",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"almacenadora",
+						"categories",
+						"delete",
+						"680d2a82e4c8d934165c1664"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "680d2a82e4c8d934165c1664",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "dd90eedb-e952-4a92-a8c0-4dfe63dbacd2",
+		"name": "Proveedores",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37414058"
+	},
+	"item": [
+		{
+			"name": "Registrar Proveedor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwNGRmODZiNzFmNWQ4MGZkNWU4OWYiLCJpYXQiOjE3NDU4OTkwMDksImV4cCI6MTc0NTkxNzAwOX0.GQ3E5t_c8P9YAa9DjHYorrl46kvj_Dgxl02aidYmio8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Colgate CO.\",\r\n    \"telefono\": \"77778888\",\r\n    \"email\":\"colgate@gmail.com.gt\",\r\n    \"categoria\": \"68104f1a6b71f5d80fd5e8b4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3007/almacenadora/proveedores/save/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"almacenadora",
+						"proveedores",
+						"save",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3007/almacenadora/proveedores/get/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"almacenadora",
+						"proveedores",
+						"get",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3007/almacenadora/proveedores/search/680dbc7406affd7742637202",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"almacenadora",
+						"proveedores",
+						"search",
+						"680dbc7406affd7742637202"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkMjdjZTA1ZDkxYmY0MWUyMTdlOWUiLCJpYXQiOjE3NDU3Mjg5ODEsImV4cCI6MTc0NTc0Njk4MX0.790PtmE6zSdM1NyU6xPmKCkxiq7olv3r-oQ7lkqn8hc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Procasa & Robbin Edit\",\r\n    \"telefono\": \"77778888\",\r\n    \"email\":\"correoeditado@gmail.com\",\r\n    \"categoria\": \"680dc540cbc8a419754f05c8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3007/almacenadora/proveedores/update/680dbcb8486172336c5d929c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"almacenadora",
+						"proveedores",
+						"update",
+						"680dbcb8486172336c5d929c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODBkMjdjZTA1ZDkxYmY0MWUyMTdlOWUiLCJpYXQiOjE3NDU3Mjg5ODEsImV4cCI6MTc0NTc0Njk4MX0.790PtmE6zSdM1NyU6xPmKCkxiq7olv3r-oQ7lkqn8hc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"confirm\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3007/almacenadora/proveedores/delete/680de3650a5bf4ca1a58670c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"almacenadora",
+						"proveedores",
+						"delete",
+						"680de3650a5bf4ca1a58670c"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

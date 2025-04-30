@@ -1,0 +1,10 @@
+[{
+  "_id": {
+    "$oid": "6810852f06dbee64b90fd338"
+  },
+  "name": "Productos Sin Categoria",
+  "description": "Categoria por defecto para los productos sin categoria",
+  "proveedores": [],
+  "estado": true,
+  "__v": 0
+}]

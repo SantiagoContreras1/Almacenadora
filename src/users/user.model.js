@@ -16,7 +16,7 @@ const UserSchema = Schema({
     },
     role:{
         type: String,
-        default: "user"
+        default: "USER_ROLE"
     },
     estado:{
         type: Boolean,
