@@ -3,10 +3,10 @@ import Category from "../categories/category.model.js";
 import Proveedor from "../proveedores/proveedor.model.js";
 
 import {
-    findProductByCategory,
-    findProductsByDate,
-    findByNameProduct
-} from '../helpers/filtrar-products..js';
+  findProductByCategory,
+  findProductsByDate,
+  findByNameProduct,
+} from "../helpers/filtrar-products..js";
 
 export const saveProduct = async (req, res) => {
   try {
@@ -47,6 +47,19 @@ export const saveProduct = async (req, res) => {
 export const getProducts = async (req, res) => {
   try {
     const query = { estado: true };
+    const { name, category, entrada } = req.query;
+
+    if (name) {
+      query.name = findByNameProduct(name);
+    }
+
+    if (category) {
+      query.category = await findProductByCategory(category);
+    }
+
+    if (entrada) {
+      query.entrada = findProductsByDate(entrada);
+    }
 
     const products = await Product.find(query)
       .populate({
@@ -57,6 +70,13 @@ export const getProducts = async (req, res) => {
         path: "proveedor",
         select: "nombre",
       });
+
+    if (products.length === 0) {
+      return res.status(404).json({
+        ss: false,
+        msg: "No se encontraron productos",
+      });
+    }
 
     res.status(200).json({
       ss: true,
@@ -107,10 +127,10 @@ export const updateProduct = async (req, res) => {
     }
 
     if (!proveedor) {
-        return res.status(404).json({
-          message: "Proveedor not found",
-        });
-      }
+      return res.status(404).json({
+        message: "Proveedor not found",
+      });
+    }
 
     // Asegurarse de que las fechas (si se envían) sean válidas
     if (data.entrada && isNaN(new Date(data.entrada))) {
@@ -172,60 +192,53 @@ export const deleteProduct = async (req, res) => {
   }
 };
 
-
-
 // GETS ESPECIALES
-export const getProductStock = async (req,res) => {
-    try {
-        const { id } = req.params
-        const product = await Product.findById(id)
+export const getProductStock = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const product = await Product.findById(id);
 
-        if (!product) {
-            return res.status(404).json({
-                ss:false,
-                msg: 'No se encontró el producto'
-            })
-        }
-
-        const stock = product.stock
-
-        res.status(200).json({
-            ss:true,
-            stock: `El stock del producto ${product.name} es: ${stock}`
-        })
-
-
-    } catch (error) {
-        return res.status(500).json({
-            msg: "Error al obtener el stock del producto",
-            error: error.message
-        })
+    if (!product) {
+      return res.status(404).json({
+        ss: false,
+        msg: "No se encontró el producto",
+      });
     }
-}
 
-export const getTotalStock = async (req,res) => {
-    try {
-        const products = await Product.find({ estado: true })
-        let totalStock = 0
-        let totalValue = 0
+    const stock = product.stock;
 
-        for (const product of products) {
-            totalStock += product.stock
-            totalValue += product.price * product.stock
-        }
+    res.status(200).json({
+      ss: true,
+      stock: `El stock del producto ${product.name} es: ${stock}`,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      msg: "Error al obtener el stock del producto",
+      error: error.message,
+    });
+  }
+};
 
-        res.status(200).json({
-            ss:true,
-            totalStock: `El stock total es: ${totalStock}`,
-            totalValue: `El valor total del stock es: Q${totalValue}`
-        })
+export const getTotalStock = async (req, res) => {
+  try {
+    const products = await Product.find({ estado: true });
+    let totalStock = 0;
+    let totalValue = 0;
 
-        
-    } catch (error) {
-        return res.status(500).json({
-            msg: "Error al obtener el stock total", 
-            error: error.message
-        })
+    for (const product of products) {
+      totalStock += product.stock;
+      totalValue += product.price * product.stock;
     }
-}
 
+    res.status(200).json({
+      ss: true,
+      totalStock: `El stock total es: ${totalStock}`,
+      totalValue: `El valor total del stock es: Q${totalValue}`,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      msg: "Error al obtener el stock total",
+      error: error.message,
+    });
+  }
+};
