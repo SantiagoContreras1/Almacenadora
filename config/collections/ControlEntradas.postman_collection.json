@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "a4d67e47-7271-4590-8c86-78432e331ab2",
+		"name": "ControlEntradas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37414058"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwODUyZjA2ZGJlZTY0YjkwZmQzNDIiLCJpYXQiOjE3NDU5NjQ4MTgsImV4cCI6MTc0NTk4MjgxOH0.bmm8FdOJH_T-XQxaMmC4F_v5kZJ5rABFlHMQrrs_AHw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product\":\"681066c72e13d3ddaabacc53\",\r\n    \"date\":\"\",\r\n    \"quantityAdded\":\"40\",\r\n    \"employee\": \"68108c877e62c8a75d39ebf3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/almacenadora/input/save/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"almacenadora",
+						"input",
+						"save",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwODUyZjA2ZGJlZTY0YjkwZmQzNDIiLCJpYXQiOjE3NDU5MTQ3NzIsImV4cCI6MTc0NTkzMjc3Mn0.aU5F4mNy6JgF94E-aHoLaE4A8hF2xp9PA25A-LZvprA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/almacenadora/input/get/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"almacenadora",
+						"input",
+						"get",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwODUyZjA2ZGJlZTY0YjkwZmQzNDIiLCJpYXQiOjE3NDU5NzI2NDYsImV4cCI6MTc0NTk5MDY0Nn0.Bz_btzZ4mFdbzzw35BNmniUbOSQGmti2Gej88qY5g9U",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quantityAdded\":\"40\",\r\n    \"employee\":\"681066c72e13d3ddaabacc53\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/almacenadora/input/update/68116e0dfaf649e26f9860f5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"almacenadora",
+						"input",
+						"update",
+						"68116e0dfaf649e26f9860f5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwODUyZjA2ZGJlZTY0YjkwZmQzNDIiLCJpYXQiOjE3NDU5MTU3NjQsImV4cCI6MTc0NTkzMzc2NH0.5XSIhQ47WZtFE1xyX7X6RSeLAeMDi82kzF72D7OXkmk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"confirm\":\"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/almacenadora/input/delete/68108cc47e62c8a75d39ebf9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"almacenadora",
+						"input",
+						"delete",
+						"68108cc47e62c8a75d39ebf9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ResumenEntradas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2ODEwODUyZjA2ZGJlZTY0YjkwZmQzNDIiLCJpYXQiOjE3NDU5NjQ4MTgsImV4cCI6MTc0NTk4MjgxOH0.bmm8FdOJH_T-XQxaMmC4F_v5kZJ5rABFlHMQrrs_AHw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/almacenadora/input/movements/681066c72e13d3ddaabacc53",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"almacenadora",
+						"input",
+						"movements",
+						"681066c72e13d3ddaabacc53"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProductoMasMovidos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/almacenadora/input/moreActive/681066c72e13d3ddaabacc53",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"almacenadora",
+						"input",
+						"moreActive",
+						"681066c72e13d3ddaabacc53"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

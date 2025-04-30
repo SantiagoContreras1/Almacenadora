@@ -6,7 +6,7 @@
   "description": "Pasta para los dientes",
   "picture": "",
   "price": 35,
-  "stock": 550,
+  "stock": 400,
   "proveedor": {
     "$oid": "68104f8d6b71f5d80fd5e8be"
   },
@@ -56,7 +56,7 @@
   "description": "Hilo para los dientes",
   "picture": "",
   "price": 35,
-  "stock": 50,
+  "stock": 130,
   "proveedor": {
     "$oid": "68104f8d6b71f5d80fd5e8be"
   },

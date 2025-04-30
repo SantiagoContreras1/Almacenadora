@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "2d73dc4c-0dd7-4629-ba8a-0193393800b9",
+		"_postman_id": "9e98fa74-5409-4cb9-860d-c8a836efad78",
 		"name": "auth",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "42040033"
+		"_exporter_id": "37414058"
 	},
 	"item": [
 		{
@@ -44,7 +44,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\":\"mayen@gmail.com\",\r\n    \"password\":\"1234567\"\r\n}",
+					"raw": "{\r\n    \"email\":\"admin@admin.com\",\r\n    \"password\":\"1234567\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -52,12 +52,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3007/almacenadora/auth/login/",
+					"raw": "http://localhost:3000/almacenadora/auth/login/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3007",
+					"port": "3000",
 					"path": [
 						"almacenadora",
 						"auth",

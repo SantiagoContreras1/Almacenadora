@@ -1,0 +1,20 @@
+[{
+  "_id": {
+    "$oid": "68108c877e62c8a75d39ebf3"
+  },
+  "name": "Empleado 1",
+  "apellido": "Apellido del empleado 1",
+  "puesto": "Bodeguero",
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68108e4a7e62c8a75d39ec0f"
+  },
+  "name": "Empleado 2",
+  "apellido": "Apellido 2",
+  "puesto": "Admin de bodegas",
+  "estado": true,
+  "__v": 0
+}]

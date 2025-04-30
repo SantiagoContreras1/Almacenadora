@@ -14,6 +14,12 @@ const ProveedorSchema = Schema({
     required: [true, "Ingresa el correo electrónico del proveedor."],
     unique: true,
   },
+  productos: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Product",
+    },
+  ],
   estado: {
     type: Boolean,
     default: true,
