@@ -31,11 +31,11 @@ const ProductSchema = Schema({
         type: Number,
         default: 0
     },
-    entrada:{
+    vencimiento:{
         type: Date,
         default: Date.now
     },
-    salida:{
+    entrada:{
         type: Date,
         default: null
     },

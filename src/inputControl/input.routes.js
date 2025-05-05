@@ -4,8 +4,7 @@ import { check } from "express-validator";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validarJWT } from "../middlewares/validar-JWT.js";
 import { validarProductoExiste } from "../middlewares/validar-producto.js";
-import { saveInput, getInputs, deleteInput, updateInput, getinputId, getMovementsInventory, getTopMovedProducts} from "./input.controller.js"; 
-import { get } from "mongoose";
+import { saveInput, getInputs, deleteInput, updateInput, getinputId} from "./input.controller.js"; 
 
 const router = Router();
 
@@ -14,7 +13,7 @@ router.post(
     [
         validarJWT,
         check("product", "El ID del producto es obligatorio y debe ser un ID válido").isMongoId(),
-        check("quantityAdded", "La cantidad añadida es obligatoria, debe ser un número y mayor que 0").isNumeric().toFloat().custom(value => value > 0),
+        check("quantity", "La cantidad añadida es obligatoria, debe ser un número y mayor que 0").isNumeric().toFloat().custom(value => value > 0),
         validarCampos,
         validarProductoExiste,
 
@@ -23,7 +22,7 @@ router.post(
 );
 
 router.get(
-    "/get/",
+    "/",
     [
         validarJWT
     ],
@@ -31,7 +30,7 @@ router.get(
 )
 
 router.get(
-    "/get/:id",
+    "/:id",
     [
         validarJWT
     ],
@@ -42,7 +41,7 @@ router.put(
     "/update/:id",
     [
         validarJWT,
-        check("quantityAdded", "La cantidad añadida es obligatoria, debe ser un número y mayor que 0").isNumeric().toFloat().custom(value => value > 0),
+        check("quantity", "La cantidad añadida es obligatoria, debe ser un número y mayor que 0").isNumeric().toFloat().custom(value => value > 0),
         validarCampos,
     ],
     updateInput
@@ -57,24 +56,6 @@ router.delete(
         validarCampos
     ],
     deleteInput
-)
-
-router.get(
-    "/movements/:id",
-    [
-        validarJWT,
-        validarCampos,
-        validarProductoExiste,
-    ],
-    getMovementsInventory
-)
-
-router.get(
-    "/moreActive/:id",
-    [
-            
-    ],
-    getTopMovedProducts
 )
 
 export default router;

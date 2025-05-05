@@ -5,13 +5,14 @@ import {
   updateUser,
   deleteUser,
   checkEmail,
+  updatePassword,
 } from "./user.controller.js";
 import {
   checkOwnAccount,
   checkRoleChange,
   validateCurrentPassword,
-  validatePasswordOnDelete,
 } from "../middlewares/validateUser.js";
+import { validarJWT } from "../middlewares/validar-JWT.js";
 
 const router = Router();
 
@@ -20,15 +21,20 @@ router.get("/checkEmail", checkEmail);
 router.get("/:userId", getUserById);
 router.put(
   "/:userId",
+  validarJWT,
   checkOwnAccount,
   checkRoleChange,
-  validateCurrentPassword,
   updateUser
 );
+router.patch("/password/:userId",
+  validateCurrentPassword,
+  updatePassword
+)
+
 router.delete(
   "/:userId",
+  validarJWT,
   checkOwnAccount,
-  validatePasswordOnDelete,
   deleteUser
 );
 

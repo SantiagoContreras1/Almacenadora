@@ -4,32 +4,15 @@ import Category from '../categories/category.model.js';
 export const saveProveedor = async (req,res) => {
     try {
         const data = req.body
-        const category = await Category.findById(data.categoria)
-        if (!category) {
-            return res.status(404).json({
-                ss: false,
-                msg: 'No se encontró la categoría'
-            })
-        }
-
         const proveedor = await Proveedor.create({
             nombre: data.nombre,
             telefono: data.telefono,
             email: data.email,
-            categoria: data.categoria    
+            contacto: data.contacto,
+            direccion: data.direccion
         })
 
-
-        category.proveedores.push(proveedor._id)
-        await category.save()
         await proveedor.save()
-        const proveedorConCategoria = await Proveedor.findById(proveedor._id)
-            .populate({
-                path: "categoria",
-                select: "name"
-            })
-            
-
         res.status(200).json({
             ss: true,
             msg: 'Proveedor guardado correctamente',
@@ -127,14 +110,6 @@ export const updateProveedor = async (req,res) => {
 export const deleteProveedor = async (req,res) => {
     try {
         const {id} = req.params
-        const proveedor = await Proveedor.findById(id)
-
-
-        const category = await Category.findOne(proveedor.categoria)
-        if(category){
-            category.proveedores.pull(proveedor._id)
-            await category.save()
-        }
 
         //Primero se busca el proveedor por id para bananearlo
         await Proveedor.findByIdAndUpdate(id,{estado:false},{new:true})

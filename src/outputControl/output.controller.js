@@ -3,7 +3,8 @@ import Product from "../products/product.model.js";
 
 export const saveOutput = async (req, res) => {
   try {
-    const { product, date, employee, quantity, reason, destination } = req.body;
+    const { product, date, quantity, reason, destination } = req.body;
+    const employeeId = req.user._id; 
     const existingProduct = await Product.findById(product);
 
     if (!existingProduct) {
@@ -11,15 +12,22 @@ export const saveOutput = async (req, res) => {
         message: "Product not found",
       });
     }
+
+    if(existingProduct.stock < quantity){
+      return res.status(404).json({
+        message: "Stock Insuficiente"
+      })
+    }
     
     existingProduct.stock -= quantity;
+    existingProduct.ventas += quantity
     await existingProduct.save(); 
 
     const outputRecord = new Output({
       product: existingProduct._id, 
       date,
-      employee,
-      quantityRemoved: quantity,
+      employee: employeeId,
+      quantity,
       reason,
       destination,
     });
@@ -83,7 +91,7 @@ export const getoutputId = async (req, res) => {
 export const deleteOutput = async (req, res) => {
   try {
     const { id } = req.params;
-
+    const employeeId = req.user._id
     const desactivedOutput = await Output.findByIdAndUpdate(
       id,
       { active: false },
@@ -111,21 +119,21 @@ export const deleteOutput = async (req, res) => {
 export const updateOutput = async (req, res) => {
   try {
     const { id } = req.params;
-    const { quantityRemoved: newQuantityRemoved, reason, destination} = req.body;
-
+    const { quantityRemoved, reason, destination } = req.body;
+    const employeeId = req.user._id
     const originalOutput = await Output.findById(id);
 
     if (!originalOutput) {
       return res.status(404).json({ message: "Output record not found" });
     }
 
-    const originalQuantityRemoved = originalOutput.quantityRemoved;
+    const originalQuantityRemoved = originalOutput.quantity;
     const originalProductId = originalOutput.product;
 
     const updateData = {
-      quantityRemoved: Number(newQuantityRemoved), 
-      reason: reason, 
-      destination: destination,
+      quantity: Number(quantityRemoved),
+      reason,
+      destination,
     };
 
     const product = await Product.findById(originalProductId);
@@ -134,7 +142,7 @@ export const updateOutput = async (req, res) => {
       return res.status(404).json({ message: "Associated product not found" });
     }
 
-    const quantityDifference = updateData.quantityRemoved - originalQuantityRemoved;
+    const quantityDifference = updateData.quantity - originalQuantityRemoved;
 
     const updatedOutput = await Output.findByIdAndUpdate(id, updateData, {
       new: true,
@@ -161,4 +169,3 @@ export const updateOutput = async (req, res) => {
     });
   }
 };
-

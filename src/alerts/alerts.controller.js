@@ -1,10 +1,11 @@
 import Product from "../products/product.model.js"
+import { saveNotification } from "../notifications/notificaction.controller.js"
 import { io } from "../../config/server.js"
 
 export const checkStockAndExp = async () => {
     try {
         const lowStock = await Product.find({
-            stock: {$lte: 5},
+            stock: {$lte: 20},
             estado: true
         })
 
@@ -12,7 +13,7 @@ export const checkStockAndExp = async () => {
         const today = new Date()
 
         const cercaExp = await Product.find({
-            salida: {
+            vencimiento: {
                 $gte: today,
                 $lte: new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000) // Próximos 7 días
             }
@@ -24,6 +25,17 @@ export const checkStockAndExp = async () => {
                 lowStock,
                 cercaExp
             })
+
+            for (const product of lowStock) {
+                const msg = `Producto "${product.name}" con stock bajo: ${product.stock}`;
+                await saveNotification("LOW_STOCK", msg, product._id);
+            }
+
+            for (const product of cercaExp) {
+                const vencimientoFormateado = product.vencimiento.toISOString().split("T")[0];
+                const msg = `Producto "${product.name}" vence pronto (Fecha: ${vencimientoFormateado})`;
+                await saveNotification("EXPIRATION", msg, product._id);
+            }
         }
 
 

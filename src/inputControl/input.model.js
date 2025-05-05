@@ -11,14 +11,14 @@ const InputSchema = Schema({
         default: Date.now, 
         required: true
     },
-    quantityAdded: {
+    quantity: {
         type: Number,
         required: [true, 'La cantidad añadida es obligatoria'],
         min: [1, 'La cantidad debe ser al menos 1'] 
     },
     employee: {
         type: Schema.Types.ObjectId, 
-        ref: 'Employee',
+        ref: 'User',
         required: [true, 'El empleado es obligatorio']
     }
 });

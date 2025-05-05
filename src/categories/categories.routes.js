@@ -46,7 +46,6 @@ router.delete(
         esAdmin,
         check("id", "El ID es obligatorio").isMongoId(),
         categoryExistsForDelete,
-        check("confirm", "El valor de confirm es obligatorio").isBoolean(),
         validarCampos
     ],
     deleteCategory

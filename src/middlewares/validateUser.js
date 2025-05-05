@@ -5,7 +5,7 @@ import User from "../users/user.model.js";
 export const checkOwnAccount = async (req, res, next) => {
   const { userId } = req.params;
   const authenticatedUser = req.user;
-
+  console.log(authenticatedUser)
   if (authenticatedUser.role !== "ADMIN_ROLE" && authenticatedUser.id !== userId) {
     return res.status(403).json({
       success: false,
@@ -59,27 +59,3 @@ export const validateCurrentPassword = async (req, res, next) => {
 };
 
 
-export const validatePasswordOnDelete = async (req, res, next) => {
-  const { userId } = req.params;
-  const { password } = req.body;
-
-  const user = await User.findById(userId);
-
-  if (!user) {
-    return res.status(404).json({
-      success: false,
-      msg: "User not found",
-    });
-  }
-
-  const validPassword = await verify(user.password, password);
-
-  if (!validPassword) {
-    return res.status(400).json({
-      success: false,
-      msg: "Password is incorrect",
-    });
-  }
-
-  next();
-};

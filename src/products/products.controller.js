@@ -27,6 +27,9 @@ export const saveProduct = async (req, res) => {
       vencimiento: data.vencimiento || null,
     });
 
+    proveedor.productos.push(product._id);
+    await proveedor.save();
+
     const productConCategoria = await Product.findById(product._id)
       .populate({ path: "category", select: "name" })
       .populate({ path: "proveedor", select: "nombre" });
@@ -232,12 +235,66 @@ export const getTotalStock = async (req, res) => {
 
     res.status(200).json({
       ss: true,
-      totalStock: `El stock total es: ${totalStock}`,
-      totalValue: `El valor total del stock es: Q${totalValue}`,
+      totalStock,
+      totalValue
     });
   } catch (error) {
     return res.status(500).json({
       msg: "Error al obtener el stock total",
+      error: error.message,
+    });
+  }
+};
+
+export const getTopSellingProducts = async (req, res) => {
+  try {
+    const topProducts = await Product.find({ estado: true })
+      .sort({ ventas: -1 })
+      .limit(5);
+
+    res.status(200).json({
+      success: true,
+      productos: topProducts,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      msg: "Error al obtener los productos más vendidos",
+      error: error.message,
+    });
+  }
+};
+
+export const getLowStockproducts = async (req, res) => {
+  try {
+    const lowStockProducts = await Product.find({
+      estado: true,
+      stock: { $lt: 50 },
+    });
+
+    const productosConTipo = lowStockProducts.map((producto) => {
+      let tipo = "";
+
+      if (producto.stock == 50) {
+        tipo = "Moderado";
+      } else if (producto.stock >= 25) {
+        tipo = "Bajo";
+      } else {
+        tipo = "Urgente";
+      }
+
+      return {
+        ...producto.toObject(),
+        tipo,
+      };
+    });
+
+    res.status(200).json({
+      success: true,
+      productos: productosConTipo,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      msg: "Error al obtener los productos con bajo stock",
       error: error.message,
     });
   }

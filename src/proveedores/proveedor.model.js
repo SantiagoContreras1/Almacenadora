@@ -5,6 +5,14 @@ const ProveedorSchema = Schema({
     type: String,
     required: [true, "Ingresa el nombre del proveedor."],
   },
+  contacto: {
+    type: String,
+    required: [true, "Ingresa el nombre del contacto."],
+  },
+  direccion: {
+    type: String,
+    required: [true, "Ingresa la direccion de la direccion"],
+  },
   telefono: {
     type: String,
     required: [true, "Ingresa el teléfono del proveedor."],

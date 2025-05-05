@@ -6,11 +6,10 @@ import User from "./user.model.js";
 export const getUsers = async (req = request, res = response) => {
   try {
     const { limit = 10, offset = 0 } = req.query;
-    const query = { estado: true };
 
     const [total, users] = await Promise.all([
-      User.countDocuments(query),
-      User.find(query).skip(Number(offset)).limit(Number(limit)),
+      User.countDocuments(),
+      User.find().skip(Number(offset)).limit(Number(limit)),
     ]);
 
     res.status(200).json({
@@ -80,11 +79,7 @@ export const checkEmail = async (req = request, res) => {
 export const updateUser = async (req, res = response) => {
   try {
     const { userId } = req.params;
-    const { currentPassword, password, role, ...data } = req.body;
-
-    if (password) {
-      data.password = await hash(password);
-    }
+    const { role, ...data } = req.body;
 
     if (role) {
       data.role = role;
@@ -107,14 +102,43 @@ export const updateUser = async (req, res = response) => {
 };
 
 
+export const updatePassword = async (req, res = response) => {
+  try {
+    const { userId } = req.params;
+    const { password } = req.body;
+
+    const hashedPassword = await hash(password);
+
+    const updatedUser = await User.findByIdAndUpdate(
+      userId,
+      { password: hashedPassword },
+      { new: true }
+    );
+
+    res.status(200).json({
+      success: true,
+      msg: "User successfully updated",
+      user: updatedUser,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      msg: "Error updating user",
+      error: error.message,
+    });
+  }
+};
+
+
 export const deleteUser = async (req, res) => {
   try {
     const { userId } = req.params;
-    await User.findByIdAndUpdate(userId, { state: false }, { new: true });
+    const user = await User.findByIdAndUpdate(userId, { estado: false }, { new: true });
 
     res.status(200).json({
       success: true,
       msg: "User deactivated successfully",
+      user
     });
   } catch (error) {
     res.status(500).json({

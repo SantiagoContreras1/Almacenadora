@@ -14,6 +14,8 @@ import {
   deleteProduct,
   getProductStock,
   getTotalStock,
+  getTopSellingProducts,
+  getLowStockproducts,
 } from "./products.controller.js";
 
 const router = Router();
@@ -23,6 +25,8 @@ router.get("/search/:id", [validarJWT], searchProduct);
 // GETS ESPECIALES
 router.get("/stock/:id", [validarJWT], getProductStock)
 router.get("/totalStock", [validarJWT], getTotalStock)
+router.get("/bestSellers", [validarJWT], getTopSellingProducts )
+router.get("/lowStock", [validarJWT], getLowStockproducts )
 
 router.post(
   "/save/",

@@ -74,12 +74,10 @@ export const deleteCategory = async (req, res) => {
         await defaultCategoryData.save();
       }
   
-      const productosHuérfanos = await Product.find({ category: id });
-  
-      await Product.updateMany({ category: id }, { category: defaultCategory._id });
-      defaultCategory.products.push(...productosHuérfanos.map(product => product._id));
-      defaultCategory.markModified('products');
-      await defaultCategory.save();
+      await Product.updateMany(
+        { category: id },
+        { category: defaultCategory._id }
+      );
   
       const deletedCategory = await Category.findByIdAndUpdate(id, { estado: false }, { new: true });
   

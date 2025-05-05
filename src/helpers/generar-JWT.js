@@ -10,7 +10,7 @@ export const generarJWT = (uid='')=>{
             payload, // Enviar la data
             process.env.SECRETPRIVATYKEY, // Envia mi firma, la que esta en el .env
             {
-                expiresIn: '5h'
+                expiresIn: '2h'
             },
             (err,token)=>{ // Callback
                 err ? (console.log(err),reject('No se generó el token correctamente')) : resolve(token) 

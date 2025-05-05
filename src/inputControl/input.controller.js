@@ -1,22 +1,21 @@
 import Input from "./input.model.js";
 import Product from "../products/product.model.js";
-import Output from "../outputControl/output.model.js";
 
 export const saveInput = async (req, res) => {
     try {
         const employeeId = req.user._id; 
-        const { quantityAdded } = req.body;
+        const { quantity } = req.body;
         const product = req.product;
 
         const inputRecord = new Input({
             product: product._id, 
-            quantityAdded,
+            quantity,
             employee: employeeId
         });
 
         await inputRecord.save();
-
-        product.stock += quantityAdded;
+        product.stock += quantity;
+        product.entrada = Date.now();
         await product.save();
 
         res.status(200).json({
@@ -82,7 +81,6 @@ export const deleteInput = async (req, res) => {
                 message: "Input not found or already inactive"
             });
         }
-
         res.status(200).json({
             message: "Input deactivated successfully",
             deactivatedInput 
@@ -106,8 +104,7 @@ export const deleteInput = async (req, res) => {
 export const updateInput = async (req, res) => {
     try {
         const { id } = req.params;
-        const { quantityAdded: newQuantityAdded } = req.body;
-
+        const { quantity } = req.body;
         const originalInput = await Input.findById(id);
 
         if (!originalInput) {
@@ -120,11 +117,11 @@ export const updateInput = async (req, res) => {
             return res.status(404).json({ message: "Associated product not found" });
         }
 
-        const quantityDifference = newQuantityAdded - originalInput.quantityAdded;
+        const quantityDifference = quantity - originalInput.quantity;
 
         const updatedInput = await Input.findByIdAndUpdate(
             id,
-            { quantityAdded: newQuantityAdded },
+            { quantity: Number(quantity) },
             { new: true }
         );
 
@@ -145,107 +142,4 @@ export const updateInput = async (req, res) => {
     }
 }
 
-export const getMovementsInventory = async (req, res) => {
-  try {
-    const product = req.product;
-
-    const entradas = await Input.find({ product: product._id })
-      .populate("employee", "name")
-      .sort({ createdAt: -1 }); 
-
-    const salidas = await Output.find({ product: product._id })
-      .populate("employee", "name")
-      .sort({ date: -1 });
-
-    const movimientos = [
-      ...entradas.map((entrada) => ({
-        tipo: "entrada",
-        fecha: entrada.createdAt,
-        cantidad: entrada.quantityAdded,
-        empleado: entrada.employee,
-        detalles: entrada,
-      })),
-      ...salidas.map((salida) => ({
-        tipo: "salida",
-        fecha: salida.date,
-        cantidad: salida.quantityRemoved,
-        empleado: salida.employee,
-        razon: salida.reason,
-        destino: salida.destination,
-        detalles: salida,
-      })),
-    ];
-
-    movimientos.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
-
-    res.status(200).json({
-      message: "Movimientos del producto obtenidos exitosamente",
-      producto: {
-        id: product._id,
-        nombre: product.name,
-        stockActual: product.stock,
-      },
-      movimientos,
-    });
-  } catch (error) {
-    res.status(500).json({
-      message: "Error al obtener los movimientos del inventario",
-      error: error.message,
-    });
-  }
-};
-
-export const getTopMovedProducts = async (req, res) => {
-    try {
-      const entradas = await Input.aggregate([
-        {
-          $group: {
-            _id: "$product",
-            entradas: { $sum: "$quantityAdded" }
-          }
-        }
-      ]);
-  
-      const salidas = await Output.aggregate([
-        {
-          $group: {
-            _id: "$product",
-            salidas: { $sum: "$quantityRemoved" }
-          }
-        }
-      ]);
-  
-      const movimientos = {};
-  
-      entradas.forEach(e => {
-        movimientos[e._id] = { entradas: e.entradas, salidas: 0 };
-      });
-  
-      salidas.forEach(s => {
-        if (!movimientos[s._id]) movimientos[s._id] = { entradas: 0, salidas: 0 };
-        movimientos[s._id].salidas = s.salidas;
-      });
-  
-      const resultado = Object.entries(movimientos).map(([productId, datos]) => ({
-        productId,
-        totalMovimientos: datos.entradas + datos.salidas,
-        entradas: datos.entradas,
-        salidas: datos.salidas
-      }));
-  
-      resultado.sort((a, b) => b.totalMovimientos - a.totalMovimientos);
-
-  
-      res.status(200).json({
-        message: "Productos más movidos",
-        productos: resultado
-      });
-  
-    } catch (error) {
-      res.status(500).json({
-        message: "Error al obtener productos más movidos",
-        error: error.message
-      });
-    }
-  };
   

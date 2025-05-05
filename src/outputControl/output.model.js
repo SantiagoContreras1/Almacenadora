@@ -12,10 +12,10 @@ const OutputSchema = new Schema({
     },
     employee: {
         type: Schema.Types.ObjectId,
-        ref: 'Employee',
+        ref: 'User',
         required: [true, 'El empleado es obligatorio']
     },
-    quantityRemoved: {
+    quantity: {
         type: Number,
         required: [true, 'La cantidad retirada es obligatoria'],
         min: [1, 'La cantidad debe ser al menos 1']

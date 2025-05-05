@@ -14,10 +14,9 @@ import productsRoutes from "../src/products/products.routes.js"
 import usersRoutes from "../src/users/user.routes.js"
 import inputRoutes from "../src/inputControl/input.routes.js"
 import outputRoutes from "../src/outputControl/output.routes.js"
-import employeesRoutes from "../src/employees/employee.routes.js"
-
-
-
+import movementsRoutes from "../src/movements/movement.routes.js"
+import clientsRoutes from "../src/clients/client.routes.js"
+import notificationsRoutes from "../src/notifications/notification.routes.js"
 import User from "../src/users/user.model.js"
 import Category from "../src/categories/category.model.js"
 import Role from "../src/role/role.model.js"
@@ -42,9 +41,11 @@ const routes = (app) => {
     app.use("/almacenadora/proveedores/", proveedoresRoutes)
     app.use("/almacenadora/products/", productsRoutes)
     app.use("/almacenadora/users/", usersRoutes)
-    app.use("/almacenadora/employees/", employeesRoutes)
     app.use("/almacenadora/input/", inputRoutes)
     app.use("/almacenadora/output/", outputRoutes)
+    app.use("/almacenadora/movements/", movementsRoutes)
+    app.use("/almacenadora/clients/", clientsRoutes)
+    app.use("/almacenadora/notifications/", notificationsRoutes)
 }
 
 const conectarDb = async () => {
@@ -103,35 +104,38 @@ export const crearCate = async () => {
 
 // Crear rol por defecto
 export const crearRol = async () => {
-    const existeRolAdmin = await Role.findOne({ name: "ADMIN_ROLE" })
-    const existeRolUser = await Role.findOne({ name: "USER_ROLE" })
+    const existeRolAdmin = await Role.findOne({ name: "ADMIN_ROLE" });
+    const existeRolUser = await Role.findOne({ name: "USER_ROLE" });
 
-    if (!existeRolAdmin && !existeRolUser) {
-        
+    if (!existeRolAdmin) {
         const defaultRoleAdmin = await Role.create({
             role: "ADMIN_ROLE",
             description: "Rol por defecto para los administradores"
-        })
-        const defaultRoleUser =await Role.create({
+        });
+        await defaultRoleAdmin.save();
+        console.log("Rol ADMIN_ROLE creado");
+    } else {
+        console.log("Rol ADMIN_ROLE ya existe");
+    }
+
+    if (!existeRolUser) {
+        const defaultRoleUser = await Role.create({
             role: "USER_ROLE",
             description: "Rol por defecto para los usuarios"
-        })
-
-
-        await defaultRoleAdmin.save()
-        await defaultRoleUser.save()
-        console.log("Roles creados")
-        flagRole = false
-        
-    }else{
-        console.log("Rol por defecto ya existe")
+        });
+        await defaultRoleUser.save();
+        console.log("Rol USER_ROLE creado");
+    } else {
+        console.log("Rol USER_ROLE ya existe");
     }
-}
+
+    flagRole = false;
+};
 
 // Alerta de stock y exp
 setInterval(() => {
     checkStockAndExp()
-}, 60000); // Cada 1 minuto
+}, 600); // Cada 1 minuto
 
 
 // CREAR APP Y SERVER
@@ -164,7 +168,7 @@ export const initServer = ()=>{
         })
 
 
-        app.listen(port)
+        server.listen(port)
         console.log(`Server running on port ${port}`)
 
         if (flag) {

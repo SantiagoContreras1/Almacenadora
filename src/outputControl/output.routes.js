@@ -20,7 +20,7 @@ router.post(
 )
 
 router.get(
-    "/get/",
+    "/",
     [
         validarJWT,
         esAdmin,
@@ -29,7 +29,7 @@ router.get(
 )
 
 router.get(
-    "/get/:id",
+    "/:id",
     [
         validarJWT,
         esAdmin,
@@ -45,7 +45,6 @@ router.put(
         validarJWT,
         esAdmin,
         check("id", "ID no válido").isMongoId(),
-        check("product", "El producto es obligatorio").not().isEmpty(),
         check("quantityRemoved", "La cantidad es obligatoria").not().isEmpty(),
         validarCampos,
     ],
