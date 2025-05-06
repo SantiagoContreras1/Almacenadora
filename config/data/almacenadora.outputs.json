@@ -1,18 +1,672 @@
 [{
   "_id": {
-    "$oid": "6810965c568a52067c0088a4"
+    "$oid": "681296841a2465816b4d3988"
   },
   "product": {
-    "$oid": "681050076b71f5d80fd5e8cd"
+    "$oid": "6812819c9bf509994859aa58"
   },
   "date": {
-    "$date": "2025-04-29T09:05:32.617Z"
+    "$date": "2025-04-30T21:30:44.900Z"
   },
   "employee": {
-    "$oid": "68108c877e62c8a75d39ebf3"
+    "$oid": "681273ca024a8262a162af11"
   },
-  "quantityRemoved": 60,
-  "reason": "No compro 60 compro 80",
-  "destination": "Fundacion KINAL ZONA 7",
+  "reason": "Salida para cliente",
+  "destination": "Cliente final",
+  "createdAt": {
+    "$date": "2025-04-30T21:30:44.901Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-30T21:30:44.901Z"
+  },
+  "__v": 0,
+  "quantity": 5
+},
+{
+  "_id": {
+    "$oid": "6812968b1a2465816b4d398d"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-04-30T21:30:51.772Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para cliente",
+  "destination": "Cliente final",
+  "createdAt": {
+    "$date": "2025-04-30T21:30:51.773Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-30T21:30:51.773Z"
+  },
+  "__v": 0,
+  "quantity": 8
+},
+{
+  "_id": {
+    "$oid": "681297c11a2465816b4d39ac"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-04-30T21:36:01.694Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para cliente",
+  "destination": "Cliente final",
+  "createdAt": {
+    "$date": "2025-04-30T21:36:01.694Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-30T21:36:01.694Z"
+  },
+  "__v": 0,
+  "quantity": 8
+},
+{
+  "_id": {
+    "$oid": "681297c21a2465816b4d39b3"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-04-30T21:36:02.552Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para cliente",
+  "destination": "Cliente final",
+  "createdAt": {
+    "$date": "2025-04-30T21:36:02.553Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-30T21:36:02.553Z"
+  },
+  "__v": 0,
+  "quantity": 8
+},
+{
+  "_id": {
+    "$oid": "681297c71a2465816b4d39b8"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-04-30T21:36:07.800Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para cliente",
+  "destination": "Cliente final",
+  "createdAt": {
+    "$date": "2025-04-30T21:36:07.801Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-30T21:36:07.801Z"
+  },
+  "__v": 0,
+  "quantity": 8
+},
+{
+  "_id": {
+    "$oid": "681297c91a2465816b4d39bd"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-04-30T21:36:09.212Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para cliente",
+  "destination": "Cliente final",
+  "createdAt": {
+    "$date": "2025-04-30T21:36:09.212Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-30T21:36:09.212Z"
+  },
+  "__v": 0,
+  "quantity": 8
+},
+{
+  "_id": {
+    "$oid": "681297e41a2465816b4d39c7"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-04-30T21:36:36.307Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para cliente",
+  "destination": "Cliente final",
+  "createdAt": {
+    "$date": "2025-04-30T21:36:36.308Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-30T21:36:36.308Z"
+  },
+  "__v": 0,
+  "quantity": 8
+},
+{
+  "_id": {
+    "$oid": "681297e51a2465816b4d39cc"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-04-30T21:36:37.329Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para cliente",
+  "destination": "Cliente final",
+  "createdAt": {
+    "$date": "2025-04-30T21:36:37.329Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-30T21:36:37.329Z"
+  },
+  "__v": 0,
+  "quantity": 8
+},
+{
+  "_id": {
+    "$oid": "681297e61a2465816b4d39d1"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-04-30T21:36:38.321Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para cliente",
+  "destination": "Cliente final",
+  "createdAt": {
+    "$date": "2025-04-30T21:36:38.322Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-30T21:36:38.322Z"
+  },
+  "__v": 0,
+  "quantity": 8
+},
+{
+  "_id": {
+    "$oid": "6812b94ffc839891bd0c080b"
+  },
+  "product": {
+    "$oid": "6812b8dafc839891bd0c07fa"
+  },
+  "date": {
+    "$date": "2025-04-30T23:59:11.218Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para tienda",
+  "destination": "Tienda la Bedicion",
+  "createdAt": {
+    "$date": "2025-04-30T23:59:11.219Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-30T23:59:11.219Z"
+  },
+  "__v": 0,
+  "quantity": 8
+},
+{
+  "_id": {
+    "$oid": "6812b95ffc839891bd0c0810"
+  },
+  "product": {
+    "$oid": "6812b8dafc839891bd0c07fa"
+  },
+  "date": {
+    "$date": "2025-04-30T23:59:27.404Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para tienda",
+  "destination": "Tienda la Bedicion",
+  "createdAt": {
+    "$date": "2025-04-30T23:59:27.404Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-30T23:59:27.404Z"
+  },
+  "__v": 0,
+  "quantity": 32
+},
+{
+  "_id": {
+    "$oid": "6812b977fc839891bd0c082d"
+  },
+  "product": {
+    "$oid": "6812b8dafc839891bd0c07fa"
+  },
+  "date": {
+    "$date": "2025-04-30T23:59:51.174Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para tienda",
+  "destination": "Tienda la Bedicion",
+  "createdAt": {
+    "$date": "2025-04-30T23:59:51.174Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-30T23:59:51.174Z"
+  },
+  "__v": 0,
+  "quantity": 32
+},
+{
+  "_id": {
+    "$oid": "6812d6ab9f402235d4d36998"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-05-01T02:04:27.619Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para tienda",
+  "destination": "Tienda la Bedicion",
+  "createdAt": {
+    "$date": "2025-05-01T02:04:27.620Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-01T02:04:27.620Z"
+  },
+  "__v": 0,
+  "quantity": 32
+},
+{
+  "_id": {
+    "$oid": "6812d6af9f402235d4d3699d"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-05-01T02:04:31.346Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para tienda",
+  "destination": "Tienda la Bedicion",
+  "createdAt": {
+    "$date": "2025-05-01T02:04:31.348Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-01T02:04:31.348Z"
+  },
+  "__v": 0,
+  "quantity": 32
+},
+{
+  "_id": {
+    "$oid": "6812d7099f402235d4d369d2"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-04-24T02:04:31.346Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para tienda",
+  "destination": "Tienda la Bedicion",
+  "createdAt": {
+    "$date": "2025-05-01T02:06:01.878Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-01T02:06:01.878Z"
+  },
+  "__v": 0,
+  "quantity": 32
+},
+{
+  "_id": {
+    "$oid": "6812d70f9f402235d4d369d7"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-04-24T02:04:31.346Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para tienda",
+  "destination": "Tienda la Bedicion",
+  "createdAt": {
+    "$date": "2025-05-01T02:06:07.811Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-01T02:06:07.811Z"
+  },
+  "__v": 0,
+  "quantity": 32
+},
+{
+  "_id": {
+    "$oid": "6812d7389f402235d4d369e8"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-04-17T02:04:31.346Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para tienda",
+  "destination": "Tienda la Bedicion",
+  "createdAt": {
+    "$date": "2025-05-01T02:06:48.983Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-01T02:06:48.983Z"
+  },
+  "__v": 0,
+  "quantity": 32
+},
+{
+  "_id": {
+    "$oid": "6812d7399f402235d4d369ed"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-04-17T02:04:31.346Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para tienda",
+  "destination": "Tienda la Bedicion",
+  "createdAt": {
+    "$date": "2025-05-01T02:06:49.574Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-01T02:06:49.574Z"
+  },
+  "__v": 0,
+  "quantity": 32
+},
+{
+  "_id": {
+    "$oid": "6812d73a9f402235d4d369f2"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-04-17T02:04:31.346Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para tienda",
+  "destination": "Tienda la Bedicion",
+  "createdAt": {
+    "$date": "2025-05-01T02:06:50.216Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-01T02:06:50.216Z"
+  },
+  "__v": 0,
+  "quantity": 32
+},
+{
+  "_id": {
+    "$oid": "6812d73a9f402235d4d369f7"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-04-17T02:04:31.346Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para tienda",
+  "destination": "Tienda la Bedicion",
+  "createdAt": {
+    "$date": "2025-05-01T02:06:50.859Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-01T02:06:50.859Z"
+  },
+  "__v": 0,
+  "quantity": 32
+},
+{
+  "_id": {
+    "$oid": "6812d74d9f402235d4d36a24"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-04-17T02:04:31.346Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "reason": "Salida para tienda",
+  "destination": "Tienda la Bedicion",
+  "createdAt": {
+    "$date": "2025-05-01T02:07:09.490Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-01T02:07:09.490Z"
+  },
+  "__v": 0,
+  "quantity": 32
+},
+{
+  "_id": {
+    "$oid": "6814e3ddb8b742a911fd6712"
+  },
+  "product": {
+    "$oid": "68138bccfa1fb86daf30f8f7"
+  },
+  "date": {
+    "$date": "2025-05-02T15:25:08.533Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "quantity": 5,
+  "reason": "Cliente Final",
+  "destination": "Cliente Final",
+  "createdAt": {
+    "$date": "2025-05-02T15:25:17.132Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-02T15:25:17.132Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6814e4b1f2653a5dd16b7661"
+  },
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-05-02T15:28:49.841Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "quantity": 45,
+  "reason": "Cliente Final",
+  "destination": "Cliente Final",
+  "createdAt": {
+    "$date": "2025-05-02T15:28:49.843Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-02T15:28:49.843Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6815f968ded2fa47032e5aa3"
+  },
+  "product": {
+    "$oid": "6815f8c1ded2fa47032e5a60"
+  },
+  "date": {
+    "$date": "2025-05-03T11:09:28.375Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "quantity": 4,
+  "reason": "Venta",
+  "destination": "Cliente Final",
+  "createdAt": {
+    "$date": "2025-05-03T11:09:28.376Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-03T11:09:28.376Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681600f6327783734c2e97e7"
+  },
+  "product": {
+    "$oid": "68138bccfa1fb86daf30f8f7"
+  },
+  "date": {
+    "$date": "2025-05-03T11:41:42.562Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "quantity": 55,
+  "reason": "Cliente Final",
+  "destination": "Cliente Final",
+  "createdAt": {
+    "$date": "2025-05-03T11:41:42.568Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-03T11:41:42.568Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681666ac5998498c7e60e84f"
+  },
+  "product": {
+    "$oid": "68162616b65c332773d85fbf"
+  },
+  "date": {
+    "$date": "2025-05-03T18:55:40.769Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "quantity": 5,
+  "reason": "Cliente Final",
+  "destination": "Cliente Final",
+  "createdAt": {
+    "$date": "2025-05-03T18:55:40.771Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-03T18:55:40.771Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68166e200416d926ebd1d76c"
+  },
+  "product": {
+    "$oid": "68138bccfa1fb86daf30f8f7"
+  },
+  "date": {
+    "$date": "2025-05-03T19:27:28.475Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "quantity": 45,
+  "reason": "Cliente Final",
+  "destination": "Cliente Final",
+  "createdAt": {
+    "$date": "2025-05-03T19:27:28.476Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-03T19:27:28.476Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681870a5d2eb4f80b3f3482a"
+  },
+  "product": {
+    "$oid": "6818430bd2eb4f80b3f14a98"
+  },
+  "date": {
+    "$date": "2025-05-05T08:02:45.926Z"
+  },
+  "employee": {
+    "$oid": "681273ca024a8262a162af11"
+  },
+  "quantity": 5,
+  "reason": "Venta",
+  "destination": "Cliente Final",
+  "createdAt": {
+    "$date": "2025-05-05T08:02:45.926Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-05T08:02:45.926Z"
+  },
   "__v": 0
 }]

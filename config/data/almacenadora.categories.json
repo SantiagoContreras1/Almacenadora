@@ -1,10 +1,27 @@
 [{
   "_id": {
-    "$oid": "6810852f06dbee64b90fd338"
+    "$oid": "681272a0024a8262a162aef5"
   },
   "name": "Productos Sin Categoria",
   "description": "Categoria por defecto para los productos sin categoria",
-  "proveedores": [],
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681613c93c4e1948ee6737fc"
+  },
+  "name": "Electrónica",
+  "description": "Dispositivos electrónicos como teléfonos, televisores y computadoras.",
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6816141c3c4e1948ee673804"
+  },
+  "name": "Alimentos",
+  "description": "Productos comestibles como frutas, verduras, carnes y enlatados.",
   "estado": true,
   "__v": 0
 }]

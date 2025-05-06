@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "6813a73547e064115c5703ed"
+  },
+  "tipo": "individual",
+  "nombre": "Lucía González",
+  "telefono": "0999988877",
+  "email": "lucia.gonzalez@mail.com",
+  "direccion": "Calle 15",
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6813ddadc8cf90da5a73d4cf"
+  },
+  "tipo": "individual",
+  "nombre": "Cristian Lima",
+  "telefono": "2342342343",
+  "email": "cristiannlima2@gmail.com",
+  "direccion": "6ta calle 19-63 sector 7 alamedas de santa clara zona 3, Villa Nueva",
+  "estado": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6813e12fc8cf90da5a73d558"
+  },
+  "tipo": "empresa",
+  "nombre": "Tienda la bendicion",
+  "telefono": "435345345",
+  "email": "bendi@gmail.com",
+  "direccion": "4av 1-83, Villa Nueva",
+  "estado": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6818831dfab4eaf8a20d2c25"
+  },
+  "tipo": "individual",
+  "nombre": "Distribuidora ACME",
+  "telefono": "52026568",
+  "email": "crisadmin@gmail.com",
+  "direccion": "6ta calle 19-63 sector 7 alamedas de santa clara zona 3, Villa Nueva",
+  "estado": false,
+  "__v": 0
+}]

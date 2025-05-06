@@ -1,21 +1,81 @@
 [{
   "_id": {
-    "$oid": "68104f8d6b71f5d80fd5e8be"
+    "$oid": "681275fa024a8262a162af4a"
   },
-  "nombre": "Colgate CO.",
-  "telefono": "77778888",
-  "email": "colgate@gmail.com.gt",
+  "nombre": "Distribuidora ACME",
+  "contacto": "Cristian",
+  "direccion": "6ta calle 19-63 sector 7 alamedas de santa clara zona 3, Villa Nueva",
+  "telefono": "52026568",
+  "email": "rafamejia.ai360@icloud.com",
   "productos": [
     {
-      "$oid": "681050076b71f5d80fd5e8cd"
+      "$oid": "6812819c9bf509994859aa58"
     },
     {
-      "$oid": "681066c72e13d3ddaabacc53"
+      "$oid": "6812b8dafc839891bd0c07fa"
+    },
+    {
+      "$oid": "68138beffa1fb86daf30f910"
+    },
+    {
+      "$oid": "681624e6b65c332773d85f38"
+    },
+    {
+      "$oid": "68162616b65c332773d85fbf"
+    },
+    {
+      "$oid": "681986da690de5965edca244"
+    },
+    {
+      "$oid": "681987d2690de5965edcad8a"
+    },
+    {
+      "$oid": "681988cc690de5965edcb8d6"
     }
   ],
-  "categoria": {
-    "$oid": "68104f1a6b71f5d80fd5e8b4"
-  },
   "estado": true,
-  "__v": 4
+  "__v": 11
+},
+{
+  "_id": {
+    "$oid": "68138772fa1fb86daf30f8af"
+  },
+  "nombre": "Coca Cola",
+  "contacto": "Luis Enrique",
+  "direccion": "14 2 43, Cdad. de Guatemala",
+  "telefono": "45345345",
+  "email": "Luis@gmail.com",
+  "productos": [
+    {
+      "$oid": "68138bccfa1fb86daf30f8f7"
+    },
+    {
+      "$oid": "6815f8c1ded2fa47032e5a60"
+    },
+    {
+      "$oid": "68171f9961987d5d75dbb72d"
+    }
+  ],
+  "estado": true,
+  "__v": 3
+},
+{
+  "_id": {
+    "$oid": "68183d2ed2eb4f80b3f0df8e"
+  },
+  "nombre": "Distribuidora Liverpool",
+  "contacto": "Arne Slot",
+  "direccion": "10ma Ave. 11-68",
+  "telefono": "52026568",
+  "email": "arne@gmail.com",
+  "productos": [
+    {
+      "$oid": "6818430bd2eb4f80b3f14a98"
+    },
+    {
+      "$oid": "68198750690de5965edca7a1"
+    }
+  ],
+  "estado": true,
+  "__v": 2
 }]

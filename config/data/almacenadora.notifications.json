@@ -1,0 +1,380 @@
+[{
+  "_id": {
+    "$oid": "68171c446e06279909eddceb"
+  },
+  "type": "LOW_STOCK",
+  "message": "Producto \"Notebook ASUS ROG Strix G614JIR-N3116W\" con stock bajo: 12",
+  "product": {
+    "$oid": "681624e6b65c332773d85f38"
+  },
+  "date": {
+    "$date": "2025-05-04T07:50:28.196Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-04T07:50:28.196Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-04T07:50:28.196Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68171c446e06279909eddcee"
+  },
+  "type": "EXPIRATION",
+  "message": "Producto \"Leche\" vence pronto (Fecha: 2025-05-09)",
+  "product": {
+    "$oid": "6812b8dafc839891bd0c07fa"
+  },
+  "date": {
+    "$date": "2025-05-04T07:50:28.199Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-04T07:50:28.200Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-04T07:50:28.200Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68171f9961987d5d75dbb73c"
+  },
+  "type": "EXPIRATION",
+  "message": "Producto \"Manzana\" vence pronto (Fecha: 2025-05-06)",
+  "product": {
+    "$oid": "68171f9961987d5d75dbb72d"
+  },
+  "date": {
+    "$date": "2025-05-04T08:04:41.553Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-04T08:04:41.554Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-04T08:04:41.554Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681721da61987d5d75dbcd6a"
+  },
+  "type": "LOW_STOCK",
+  "message": "Producto \"yugyg\" con stock bajo: 1",
+  "product": {
+    "$oid": "68162616b65c332773d85fbf"
+  },
+  "date": {
+    "$date": "2025-05-04T08:14:18.473Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-04T08:14:18.474Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-04T08:14:18.474Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6817220861987d5d75dbcfdc"
+  },
+  "type": "EXPIRATION",
+  "message": "Producto \"Paquete Sprite (24 16oz)\" vence pronto (Fecha: 2025-05-08)",
+  "product": {
+    "$oid": "68138bccfa1fb86daf30f8f7"
+  },
+  "date": {
+    "$date": "2025-05-04T08:15:04.156Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-04T08:15:04.156Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-04T08:15:04.156Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6817220e61987d5d75dbd02f"
+  },
+  "type": "EXPIRATION",
+  "message": "Producto \"Iphone 16 Pro Max\" vence pronto (Fecha: 2025-05-09)",
+  "product": {
+    "$oid": "6815f8c1ded2fa47032e5a60"
+  },
+  "date": {
+    "$date": "2025-05-04T08:15:10.241Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-04T08:15:10.241Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-04T08:15:10.241Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6817225061987d5d75dbd3bb"
+  },
+  "type": "LOW_STOCK",
+  "message": "Producto \"Manzana\" con stock bajo: 4",
+  "product": {
+    "$oid": "68171f9961987d5d75dbb72d"
+  },
+  "date": {
+    "$date": "2025-05-04T08:16:16.023Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-04T08:16:16.023Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-04T08:16:16.023Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6817285f9d1114d627596a9f"
+  },
+  "type": "LOW_STOCK",
+  "message": "Producto \"Paquete Sprite (24 16oz)\" con stock bajo: 4",
+  "product": {
+    "$oid": "68138bccfa1fb86daf30f8f7"
+  },
+  "date": {
+    "$date": "2025-05-04T08:42:07.403Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-04T08:42:07.404Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-04T08:42:07.404Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6817aba5a7dc478970129632"
+  },
+  "type": "LOW_STOCK",
+  "message": "Producto \"Huevos\" con stock bajo: 5",
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-05-04T18:02:13.581Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-04T18:02:13.587Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-04T18:02:13.587Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681853e0d2eb4f80b3f27ac9"
+  },
+  "type": "LOW_STOCK",
+  "message": "Producto \"Huevos\" con stock bajo: 5",
+  "product": {
+    "$oid": "6812819c9bf509994859aa58"
+  },
+  "date": {
+    "$date": "2025-05-05T06:00:00.433Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-05T06:00:00.435Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-05T06:00:00.435Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681853e0d2eb4f80b3f27acc"
+  },
+  "type": "LOW_STOCK",
+  "message": "Producto \"Paquete Sprite (24 16oz)\" con stock bajo: 4",
+  "product": {
+    "$oid": "68138bccfa1fb86daf30f8f7"
+  },
+  "date": {
+    "$date": "2025-05-05T06:00:00.443Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-05T06:00:00.444Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-05T06:00:00.444Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681853e0d2eb4f80b3f27acf"
+  },
+  "type": "LOW_STOCK",
+  "message": "Producto \"Notebook ASUS ROG Strix G614JIR-N3116W\" con stock bajo: 12",
+  "product": {
+    "$oid": "681624e6b65c332773d85f38"
+  },
+  "date": {
+    "$date": "2025-05-05T06:00:00.448Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-05T06:00:00.449Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-05T06:00:00.449Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681853e0d2eb4f80b3f27ad2"
+  },
+  "type": "LOW_STOCK",
+  "message": "Producto \"yugyg\" con stock bajo: 1",
+  "product": {
+    "$oid": "68162616b65c332773d85fbf"
+  },
+  "date": {
+    "$date": "2025-05-05T06:00:00.453Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-05T06:00:00.453Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-05T06:00:00.453Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681853e0d2eb4f80b3f27ad5"
+  },
+  "type": "LOW_STOCK",
+  "message": "Producto \"Manzana\" con stock bajo: 4",
+  "product": {
+    "$oid": "68171f9961987d5d75dbb72d"
+  },
+  "date": {
+    "$date": "2025-05-05T06:00:00.457Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-05T06:00:00.458Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-05T06:00:00.458Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681853e0d2eb4f80b3f27ad8"
+  },
+  "type": "EXPIRATION",
+  "message": "Producto \"Leche\" vence pronto (Fecha: 2025-05-09)",
+  "product": {
+    "$oid": "6812b8dafc839891bd0c07fa"
+  },
+  "date": {
+    "$date": "2025-05-05T06:00:00.462Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-05T06:00:00.462Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-05T06:00:00.462Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681853e0d2eb4f80b3f27adb"
+  },
+  "type": "EXPIRATION",
+  "message": "Producto \"Paquete Sprite (24 16oz)\" vence pronto (Fecha: 2025-05-08)",
+  "product": {
+    "$oid": "68138bccfa1fb86daf30f8f7"
+  },
+  "date": {
+    "$date": "2025-05-05T06:00:00.466Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-05T06:00:00.467Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-05T06:00:00.467Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681853e0d2eb4f80b3f27ade"
+  },
+  "type": "EXPIRATION",
+  "message": "Producto \"Iphone 16 Pro Max\" vence pronto (Fecha: 2025-05-09)",
+  "product": {
+    "$oid": "6815f8c1ded2fa47032e5a60"
+  },
+  "date": {
+    "$date": "2025-05-05T06:00:00.470Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-05T06:00:00.470Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-05T06:00:00.470Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681853e0d2eb4f80b3f27ae1"
+  },
+  "type": "EXPIRATION",
+  "message": "Producto \"Manzana\" vence pronto (Fecha: 2025-05-06)",
+  "product": {
+    "$oid": "68171f9961987d5d75dbb72d"
+  },
+  "date": {
+    "$date": "2025-05-05T06:00:00.473Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-05T06:00:00.474Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-05T06:00:00.474Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6819858d690de5965edc9336"
+  },
+  "type": "EXPIRATION",
+  "message": "Producto \"Paquete Sprite (24 16oz)\" vence pronto (Fecha: 2025-05-09)",
+  "product": {
+    "$oid": "68138bccfa1fb86daf30f8f7"
+  },
+  "date": {
+    "$date": "2025-05-06T03:44:13.498Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-06T03:44:13.499Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-06T03:44:13.499Z"
+  },
+  "__v": 0
+}]
