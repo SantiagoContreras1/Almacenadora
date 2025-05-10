@@ -8,8 +8,8 @@ export const getUsers = async (req = request, res = response) => {
     const { limit = 10, offset = 0 } = req.query;
 
     const [total, users] = await Promise.all([
-      User.countDocuments(),
-      User.find().skip(Number(offset)).limit(Number(limit)),
+      User.countDocuments({estado: true}),
+      User.find({estado: true}).skip(Number(offset)).limit(Number(limit)),
     ]);
 
     res.status(200).json({
